@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListStudentVC" customModule="GymCareForTrainer" customModuleProvider="target">
+            <connections>
+                <outlet property="cutomNavi" destination="NjX-lG-Kw8" id="RbJ-Jl-qHx"/>
+                <outlet property="tableView" destination="9Im-kB-rjs" id="pHb-wx-O5R"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjX-lG-Kw8" customClass="TypeNavigator" customModule="GymCareForTrainer" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="dC0-KU-Paq"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="setTitle" value="fee"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="infoShowBackButton" value="NO"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="setHeaderImage" value="header_fee"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="typeShowBackButton" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="typeShowSearchButton" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="showInfoNavi" value="NO"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Danh sách học viên"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBackButton" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Im-kB-rjs">
+                    <rect key="frame" x="0.0" y="110" width="393" height="708"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="aD6-oR-dIz"/>
+                        <outlet property="delegate" destination="-1" id="BLE-j2-Nta"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Im-kB-rjs" secondAttribute="trailing" id="4es-tP-Ge1"/>
+                <constraint firstItem="NjX-lG-Kw8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5iv-N2-a71"/>
+                <constraint firstItem="9Im-kB-rjs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Oyd-U2-A5w"/>
+                <constraint firstItem="NjX-lG-Kw8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UqO-QF-7HW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NjX-lG-Kw8" secondAttribute="trailing" id="lSf-8A-mr2"/>
+                <constraint firstItem="9Im-kB-rjs" firstAttribute="top" secondItem="NjX-lG-Kw8" secondAttribute="bottom" id="mjv-bE-wci"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9Im-kB-rjs" secondAttribute="bottom" id="vNJ-l5-oo8"/>
+            </constraints>
+            <point key="canvasLocation" x="65" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="header_fee" width="2000" height="530"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

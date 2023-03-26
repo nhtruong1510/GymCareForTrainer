@@ -1,0 +1,106 @@
+//
+//  ServiceSettings.swift
+//  SchoolUp
+//
+//  Created by Nguyen Ha on 02/02/2023.
+//
+
+import Foundation
+
+public class ServiceSettings {
+
+    private struct Keys {
+        static let accessToken = "KEY_ACCESS_TOKEN"
+        static let parentInfo = "KEY_PARENT_INFO"
+        static let studentInfo = "KEY_STUDENT_INFO"
+        static let demoDomain = "KEY_DEMO_DOMAIN"
+        static let students = "KEY_STUDENTS"
+        static let classInfo = "KEY_CLASS_INFO"
+        static let isComment = "IS_COMMENT"
+        static let locale = "KEY_LOCALE"
+        static let isRegisterDevice = "IS_REGISTER_DEVICE"
+        static let isPushRemote = "KEY_PUSH_REMOTE"
+        static let keyInfoPush = "KEY_INFOR_PUSH"
+    }
+
+    public static var shared = ServiceSettings()
+    private let userDefaults = UserDefaults.standard
+
+    var accessToken: String? {
+        get {
+            return userDefaults.string(forKey: Keys.accessToken)
+        }
+        set {
+            userDefaults.set(newValue, forKey: Keys.accessToken)
+            userDefaults.synchronize()
+        }
+    }
+
+    var demoDomain: String? {
+        get {
+            return userDefaults.string(forKey: Keys.demoDomain)
+        }
+        set {
+            userDefaults.set(newValue, forKey: Keys.demoDomain)
+            userDefaults.synchronize()
+        }
+    }
+
+    var userInfo: UserModel? {
+        get {
+            userDefaults.loadCodableObject(forkey: Keys.parentInfo)
+        }
+        set {
+            userDefaults.storeCodableObject(newValue, forkey: Keys.parentInfo)
+        }
+    }
+//
+//    var studentInfo: StudentModel? {
+//        get {
+//            userDefaults.loadCodableObject(forkey: Keys.studentInfo)
+//        }
+//        set {
+//            userDefaults.storeCodableObject(newValue, forkey: Keys.studentInfo)
+//        }
+//    }
+
+    var isComment: Bool {
+        get {
+            return userDefaults.bool(forKey: Keys.isComment)
+        }
+        set {
+            userDefaults.set(newValue, forKey: Keys.isComment)
+            userDefaults.synchronize()
+        }
+    }
+
+    func clearUserInfo() {
+//        ServiceSettings.shared.students.removeAll()
+//        ServiceSettings.shared.accessToken = nil
+//        ServiceSettings.shared.studentInfo = nil
+//        ServiceSettings.shared.parentInfo = nil
+//        ServiceSettings.shared.isRegisterDevice = false
+//        ServiceSettings.shared.locale = SettingLanguageVC.TagButton.vi.getTitle()
+//        AppDelegate.shared.setRootVC()
+    }
+
+    var isRegisterDevice: Bool {
+        get {
+            return userDefaults.bool(forKey: Keys.isRegisterDevice)
+        }
+        set {
+            userDefaults.set(newValue, forKey: Keys.isRegisterDevice)
+            userDefaults.synchronize()
+        }
+    }
+    
+    var isPushRemote: Bool {
+        get {
+            return userDefaults.bool(forKey: Keys.isPushRemote)
+        }
+        set {
+            userDefaults.set(newValue, forKey: Keys.isPushRemote)
+            userDefaults.synchronize()
+        }
+    }
+}
