@@ -15,6 +15,9 @@ struct Constants {
     static let MAX_UPLOAD_IMAGE: Float = 2.0
     static let DEALY_TIME = DispatchTimeInterval.seconds(1)
     static let DATE_TIME_FORMAT = "yyyy-MM-dd hh:mm:ss"
+    static let DATE_TIME_FORMAT_2 = "dd/MM/yyyy hh:mm:ss"
+    static let DATE_TIME_FORMAT_3 = "hh:mm, dd/MM/yyyy"
+    static let DATE_TIME_FORMAT_4 = "hh:mm, dd/MM"
     static let DATE_MONTH_FORMAT = "dd/MM"
     static let DATE_FORMAT = "dd/MM/yyyy"
     static let DATE_FORMAT_2 = "yyyy/MM/dd"
@@ -47,12 +50,14 @@ struct Constants {
 }
 
 struct EndPointURL {
-    static let BASE_URL: String = "https://paraline.s3.ap-southeast-1.amazonaws.com"
+    static let BASE_URL: String = ""
     static let BASE_API_URL: String = Config.shared.BASE_API_URL
     static let POLICY_URL: String = Config.shared.POLICY_URL
+    static let IMAGE_URL: String = Config.shared.BASE_API_URL + "/gymcare/"
     static let versionJson = Config.shared.versionJson
     static let versionJsonOnly = Config.shared.versionJsonOnly
     static let LOGIN: String = versionJson + "login" + Constants.SUFFIX_JSON
+    static let USER: String = versionJsonOnly + "controller/trainer" + Constants.SUFFIX_JSON
     static let RESET_PASS: String = versionJson + "password/reset" + Constants.SUFFIX_JSON
     static let UPDATE_PASS: String = versionJson + "password/update" + Constants.SUFFIX_JSON
     static let CHANGE_PASS: String = versionJson + "password/change" + Constants.SUFFIX_JSON
@@ -69,7 +74,6 @@ struct EndPointURL {
     static let GET_NOTIFICATIONS: String = versionJsonOnly + "student/notifications" + Constants.SUFFIX_JSON
     static let GET_INFOR_IN_OUT: String = versionJsonOnly + "student/inout" + Constants.SUFFIX_JSON
     static let GET_NOTI_DETAIL: String = versionJson + "notification/detail" + Constants.SUFFIX_JSON
-    static let GET_TOPICS: String = versionJson + "topics" + Constants.SUFFIX_JSON
 
     static let CONFIRM_STUDENT: String = versionJsonOnly + "checkin/student/update-inout" + Constants.SUFFIX_JSON
     static let GET_LIST_STUDENT: String = versionJsonOnly + "class/students" + Constants.SUFFIX_JSON
@@ -81,8 +85,9 @@ struct EndPointURL {
     static let ABSENCE_EDIT: String = versionJson + "absence/edit" + Constants.SUFFIX_JSON
     static let GET_STUDENT_DETAIL: String = versionJsonOnly + "student/detail" + Constants.SUFFIX_JSON
     static let UPDATE_STUDENT: String = versionJsonOnly + "student/update" + Constants.SUFFIX_JSON
-    static let GET_TOPIC_DETAIL: String = versionJson + "topic" + Constants.SUFFIX_JSON
-    static let CHAT_MESSAGE: String = versionJson + "message/chat" + Constants.SUFFIX_JSON
+    static let GET_TOPICS: String = versionJson + "chat" + Constants.SUFFIX_JSON
+    static let GET_TOPIC_DETAIL: String = versionJson + "message" + Constants.SUFFIX_JSON
+    static let RELOAD_CHAT_DETAIL: String = versionJson + "reload_message" + Constants.SUFFIX_JSON
     static let LIST_REMINDER: String = versionJson + "reminder" + Constants.SUFFIX_JSON
     static let CREATE_REMINDER: String = versionJson + "reminder/create" + Constants.SUFFIX_JSON
     static let EDIT_REMINDER: String = versionJson + "reminder/edit" + Constants.SUFFIX_JSON
@@ -116,11 +121,11 @@ struct EndPointURL {
     static let GET_LIST_FEE: String = versionJson + "fees" + Constants.SUFFIX_JSON
     static let GET_FEE_DETAIL: String = versionJsonOnly + "fee/detail" + Constants.SUFFIX_JSON
     static let GET_CHAT_DETAIL: String = versionJson + "chat-room/detail" + Constants.SUFFIX_JSON
-    static let RELOAD_CHAT_DETAIL: String = versionJson + "chat-room/reload-detail" + Constants.SUFFIX_JSON
-    static let SEND_CHAT_MESSAGE: String = versionJson + "chat-message/send" + Constants.SUFFIX_JSON
     static let CREATE_SCHEDULE: String = versionJson + "schedule" + Constants.SUFFIX_JSON
     static let CREATE_NOTIFICATION: String = versionJson + "notification" + Constants.SUFFIX_JSON
     static let UPDATE_STATUS_NOTIFICATION: String = versionJsonOnly + "controller/update_noti_status" + Constants.SUFFIX_JSON
+    static let LIST_STUDENT: String = versionJson + "list_student" + Constants.SUFFIX_JSON
+    static let NEWS: String = versionJson + "news" + Constants.SUFFIX_JSON
 
 }
 

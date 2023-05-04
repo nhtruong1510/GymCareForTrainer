@@ -14,6 +14,8 @@ class ScheduleViewCell: UITableViewCell {
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var registerButton: UIButton!
 
+    var onClickShowDetail: (() -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +27,9 @@ class ScheduleViewCell: UITableViewCell {
         timeLabel.text = data.time
     }
     
+    @IBAction private func cancelClick() {
+        if let onClickShowDetail = onClickShowDetail {
+            onClickShowDetail()
+        }
+    }
 }

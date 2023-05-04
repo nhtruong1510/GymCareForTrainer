@@ -13,9 +13,8 @@ final class MessageViewModel: BaseViewModel {
     var page = 1
     
     func getTopics(completion: @escaping (TopicModel?, String?) -> Void) {
-        self.repository.getTopics(page: page) { [weak self] data, msg in
+        self.repository.getTopics(customerId: castToInt(ServiceSettings.shared.userInfo?.id)) { [weak self] data, msg in
             guard let `self` = self else { return }
-            self.page = castToInt(data?.total)
             completion(data, msg)
         }
     }

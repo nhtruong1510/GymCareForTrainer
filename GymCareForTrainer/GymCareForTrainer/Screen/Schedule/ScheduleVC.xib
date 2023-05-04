@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleVC" customModule="GymCareForTrainer" customModuleProvider="target">
             <connections>
                 <outlet property="calendarView" destination="nOX-oD-GMR" id="LXm-Z8-twi"/>
+                <outlet property="scrollView" destination="dzZ-FT-h7q" id="XHp-ii-KUN"/>
                 <outlet property="tableView" destination="ZY8-jb-26V" id="ZtJ-WB-Tvm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,13 +27,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzZ-FT-h7q">
-                    <rect key="frame" x="0.0" y="110" width="393" height="708"/>
+                    <rect key="frame" x="0.0" y="110" width="393" height="742"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nOX-oD-GMR" customClass="JTACMonthView" customModule="JTAppleCalendar">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
                             <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="400" id="ZeT-q2-aJh"/>
+                                <constraint firstAttribute="height" priority="1" constant="400" id="ZeT-q2-aJh"/>
                             </constraints>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cjk-wS-GRv">
                                 <size key="itemSize" width="85" height="84"/>
@@ -69,7 +70,7 @@
                                 <constraint firstItem="ZY8-jb-26V" firstAttribute="top" secondItem="whx-HN-Zfg" secondAttribute="top" id="y61-BV-14B"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-I7-hwz">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-I7-hwz">
                             <rect key="frame" x="106.66666666666669" y="610" width="180" height="30"/>
                             <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             <constraints>

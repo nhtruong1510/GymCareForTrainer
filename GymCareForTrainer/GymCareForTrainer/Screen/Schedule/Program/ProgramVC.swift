@@ -12,22 +12,41 @@ class ProgramVC: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     var titleValue: String?
+    var listIds: [(id: Int, isCancelled: Int)] = []
 
-    private var listSearchData: [RegionObject] = []
-    
+    private var listSearchData: [UserModel] = []
+    private var viewModel = ProgramViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
     }
 
     private func configUI() {
-//        titleLabel.text = titleValue
+        cutomNavi.title = titleValue
         cutomNavi.onClickBack = { [weak self] in
             guard let `self` = self else { return }
             self.backScreen()
         }
         tableView.registerCells(from: .programViewCell)
         tableView.tableFooterView = UIView()
+        getSchedule()
+    }
+    
+    func getSchedule() {
+        for id in listIds {
+            viewModel.getListStudent(timeId: id.id, isCancelled: id.isCancelled) { data, msg in
+                if let msg = msg {
+                    AlertVC.show(viewController: self, msg: msg)
+                } else {
+                    let dupplicateData = self.listSearchData.firstIndex(where: {$0.id == data?.id})
+                    if let data = data, dupplicateData == nil {
+                        self.listSearchData.append(data)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 
 }
@@ -39,12 +58,12 @@ extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3//listSearchData.count
+        return listSearchData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProgramViewCell.dequeueReuse(tableView: tableView)
-//        cell.fillData(data: listSearchData[indexPath.row], seletedData: selectedData)
+        cell.fillData(data: listSearchData[indexPath.row])
         return cell
     }
 
@@ -53,8 +72,8 @@ extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ListStudentVC()
-        self.nextScreen(ctrl: vc)
+//        let vc = ListStudentVC()
+//        self.nextScreen(ctrl: vc)
     }
 
 }

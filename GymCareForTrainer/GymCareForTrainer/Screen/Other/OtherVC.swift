@@ -32,9 +32,9 @@ class OtherVC: BaseViewController {
     }
 
     private func configUI() {
-//        guard let userInfo = ServiceSettings.shared.parentInfo else { return }
-//        avatarImageView.setupAvatarView(avatar: userInfo.avatar, gender: userInfo.gender)
-//        nameLabel.text = userInfo.name
+        guard let userInfo = ServiceSettings.shared.userInfo else { return }
+        avatarImageView.setupAvatarView(avatar: userInfo.avatar, gender: userInfo.gender)
+        nameLabel.text = userInfo.name
     }
 
 
@@ -54,7 +54,7 @@ class OtherVC: BaseViewController {
     }
 
     private func actionLogout() {
-        ConfirmVC.show(title: "Xác nhận",
+        ConfirmVC.show(viewController: self, title: "Xác nhận",
                        msg: "Bạn có chắc chắn muốn đăng xuất?",
                        titleButtonLeft: "Đăng xuất",
                        titleButtonRight: "Huỷ") {

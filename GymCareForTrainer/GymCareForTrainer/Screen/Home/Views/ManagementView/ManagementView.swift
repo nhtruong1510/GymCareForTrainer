@@ -13,7 +13,7 @@ class ManagementView: UIView {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet weak var heightCollectionViewConstraint: NSLayoutConstraint!
 
-    private var items: [MenuItemModel] = []
+    private var items: [NewsModel] = []
     var onClick: ((String) -> Void)?
     var onClickMore: (() -> Void)?
 
@@ -42,7 +42,7 @@ class ManagementView: UIView {
 
     }
 
-    func reloadData(items: [MenuItemModel]) {
+    func reloadData(items: [NewsModel]) {
         self.items = items
         collectionView.reloadData { [weak self] in
             guard let `self` = self else { return }
@@ -68,18 +68,18 @@ extension ManagementView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3//items.count
+        return items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = ManagementViewCell.dequeueReuse(collectionView: collectionView, indexPath: indexPath)
-//        cell.fillData(item: items[indexPath.row])
+        cell.fillData(item: items[indexPath.row])
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let onClick = onClick {
-            onClick("1")//castToString(items[indexPath.row].menuPermissions))
+            onClick(castToString(items[indexPath.row].url))
         }
     }
 

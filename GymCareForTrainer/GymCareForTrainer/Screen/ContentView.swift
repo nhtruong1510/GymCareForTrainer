@@ -36,21 +36,24 @@ struct ContentView: View {
                 
                 HStack {
                     NavigationLink(destination: TabbarView(), isActive: $showTabbarView) {
-                        Button("Đăng nhập", action: {
-                            let viewModel = LoginViewModel()
-                            viewModel.callApiLogin(email: $phone.wrappedValue, pass: $password.wrappedValue) { success, error in
-                                if success {
-                                    showTabbarView = true
-                                }
+                        EmptyView()
+                    }
+                    .isDetailLink(false)
+                    .hidden()
+                    Button("Đăng nhập", action: {
+                        let viewModel = LoginViewModel()
+                        viewModel.callApiLogin(email: $phone.wrappedValue, pass: $password.wrappedValue) { success, error in
+                            if success {
+                                showTabbarView = true
                             }
-                        })
+                        }
+                    })
                             .padding()
                             .background(Color.main_color)
                             .foregroundColor(.white)
                             .clipShape(Capsule())
                             .font(.system(size: 16, weight: Font.Weight.bold))
                             .frame(width: 300)
-                    }
                     
                 }
                 .background(Color.main_color)
@@ -62,22 +65,7 @@ struct ContentView: View {
                         .foregroundColor(Color.main_color)
                         .font(.system(size: 16, weight: Font.Weight.regular))
                 }
-                .toolbar(.hidden, for: .navigationBar)
-                .navigationBarHidden(true)
-                .onAppear {
-                    self.isNavigationBarHidden = true
-                }
-                .navigationBarBackButtonHidden(true)
-                .navigationBarTitle("", displayMode: .inline)
             }
-            .padding()
-            .toolbar(.hidden, for: .navigationBar)
-            .navigationBarHidden(true)
-            .onAppear {
-                self.isNavigationBarHidden = true
-            }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle("", displayMode: .inline)
         }
         .toolbar(.hidden, for: .navigationBar)
         .onAppear {

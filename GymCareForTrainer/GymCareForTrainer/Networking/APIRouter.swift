@@ -65,22 +65,25 @@ let NetworkManager = MoyaProvider<APIRouter>(plugins: [NetworkPlugin(), NetworkL
 
 enum APIRouter {
     case login(String, String)
+    case editProfile(UserModel) 
+    case getUser(Int)
     case resetPass(String)
     case updatePass(String, String, String)
     case changePass(String, String, String)
     case getTopics(Int)
     case getTopicDetail(Int)
-    case chatMessage(Int, String, UIImage?)
+    case chatMessage(String, String, String)
     case logout
     case getChatDetail(Int, Int)
     case getReloadChatDetail(Int, String)
-    case sendChatMessage(Int, String, UIImage?)
     case getSchedule(Int)
     case getNotification(Int)
     case createNoti(ScheduleParamObject)
     case createSchedule(ScheduleParamObject)
     case updateSchedule(ScheduleParamObject)
     case updateStatusNoti(Int)
+    case listStudent(Int, Int)
+    case news
 
 }
 
@@ -96,29 +99,32 @@ extension APIRouter: TargetType {
     var path: String {
         switch self {
         case .login: return EndPointURL.LOGIN
+        case .editProfile, .getUser: return EndPointURL.USER
         case .resetPass: return EndPointURL.RESET_PASS
         case .updatePass: return EndPointURL.UPDATE_PASS
         case .changePass: return EndPointURL.CHANGE_PASS
         case .getTopics: return EndPointURL.GET_TOPICS
         case .getTopicDetail: return EndPointURL.GET_TOPIC_DETAIL
-        case .chatMessage: return EndPointURL.CHAT_MESSAGE
+        case .chatMessage: return EndPointURL.GET_TOPIC_DETAIL
         case .logout: return EndPointURL.LOGOUT
         case .getChatDetail: return EndPointURL.GET_CHAT_DETAIL
         case .getReloadChatDetail: return EndPointURL.RELOAD_CHAT_DETAIL
-        case .sendChatMessage: return EndPointURL.SEND_CHAT_MESSAGE
         case .createSchedule, .getSchedule: return EndPointURL.CREATE_SCHEDULE
         case .getNotification: return EndPointURL.CREATE_NOTIFICATION
         case .createNoti: return EndPointURL.CREATE_NOTIFICATION
         case .updateSchedule: return EndPointURL.CREATE_NOTIFICATION
         case .updateStatusNoti: return EndPointURL.UPDATE_STATUS_NOTIFICATION
+        case .listStudent: return EndPointURL.LIST_STUDENT
+        case .news: return EndPointURL.NEWS
 
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .login, .resetPass, .updatePass, .changePass, .chatMessage, .logout, .sendChatMessage,
-                .createNoti, .createSchedule, .updateStatusNoti:
+        case .login, .resetPass, .updatePass, .changePass, .chatMessage, .logout,
+                .createNoti, .createSchedule, .updateStatusNoti,
+                .editProfile:
             return .post
         case .updateSchedule:
             return .put
@@ -131,26 +137,36 @@ extension APIRouter: TargetType {
         switch self {
         case .login(let email, let pass):
             return .requestParameters(parameters: ["phone": email, "password": pass], encoding: JSONEncoding.default)
+        case .editProfile(let param):
+            var formData = [Moya.MultipartFormData]()
+//            let dictionary = param.toDictionary()
+//            formData.append(contentsOf: createForm(dictionary: dictionary))
+            let dictionary = param.toDictionary()
+            let jsonData = try! JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+            let paramPart = MultipartFormData(provider: .data(jsonData), name: "data")
+            formData.append(paramPart)
+            if let files = param.avatarFile {
+                formData.append(contentsOf: createMultipartFormData(listImage: [files], fileName: "avatarFile"))
+            }
+            return .uploadMultipart(formData)
+        case .getUser(let id):
+            return .requestParameters(parameters: ["trainer_id": id], encoding: URLEncoding.queryString)
         case .resetPass(let email):
             return .requestParameters(parameters: ["email": email], encoding: JSONEncoding.default)
         case .updatePass(let pass, let confirmPass, let token):
             return .requestParameters(parameters: ["password": pass, "confirm_password": confirmPass, "token": token], encoding: JSONEncoding.default)
         case .changePass(let pass, let confirmPass, let oldPass):
             return .requestParameters(parameters: ["password": pass, "confirm_password": confirmPass, "old_password": oldPass], encoding: JSONEncoding.default)
-        case .getTopics(let page):
-            return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
+        case .getTopics(let trainer_id):
+            return .requestParameters(parameters: ["trainer_id": trainer_id], encoding: URLEncoding.queryString)
         case .getTopicDetail(let id):
-            return .requestParameters(parameters: ["topic_id": id], encoding: URLEncoding.queryString)
-        case .chatMessage(let id, let message, let image):
-            let formData = getDataChatMessage(id: id, message: message, image: image)
-            return .uploadMultipart(formData)
+            return .requestParameters(parameters: ["chat_id": id], encoding: URLEncoding.queryString)
+        case .chatMessage(let id, let message, let insDatetime):
+            return .requestParameters(parameters: ["chat_id": id, "content": message, "ins_datetime": insDatetime], encoding: JSONEncoding.default)
         case .getChatDetail(let id, let page):
             return .requestParameters(parameters: ["id": id, "page": page], encoding: URLEncoding.queryString)
         case .getReloadChatDetail(let id, let currentDatetime):
-            return .requestParameters(parameters: ["id": id, "current_datetime": currentDatetime], encoding: URLEncoding.queryString)
-        case .sendChatMessage(let id, let message, let image):
-            let formData = getDataChatMessage(id: id, message: message, image: image, idName: "id")
-            return .uploadMultipart(formData)
+            return .requestParameters(parameters: ["chat_id": id, "ins_datetime": currentDatetime], encoding: URLEncoding.queryString)
         case .getSchedule(let trainerId):
             return .requestParameters(parameters: ["trainer_id": trainerId], encoding: URLEncoding.queryString)
         case .getNotification(let trainerId):
@@ -161,6 +177,8 @@ extension APIRouter: TargetType {
             return .requestParameters(parameters: param.toDictionary(), encoding: JSONEncoding.default)
         case .updateStatusNoti(let notiId):
             return .requestParameters(parameters: ["notification_id": notiId], encoding: JSONEncoding.default)
+        case .listStudent(let timeId, let isCancelled):
+            return .requestParameters(parameters: ["time_id": timeId, "is_cancelled": isCancelled], encoding: URLEncoding.queryString)
         default:
             return .requestPlain
         }

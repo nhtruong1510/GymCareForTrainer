@@ -10,6 +10,7 @@ import SwiftUI
 import JTAppleCalendar
 
 class ScheduleVC: BaseViewController {
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var tableView: ContentSizedTableView!
     @IBOutlet private weak var calendarView: JTACMonthView!
     
@@ -39,6 +40,12 @@ class ScheduleVC: BaseViewController {
         calendarView.scrollingMode   = .stopAtEachCalendarFrame
         self.calendarView.selectDates([ Date() ])
         times = viewModel.getAllTimeElement(date: self.selectedDate.toString(Constants.DATE_PARAM_FORMAT))
+        scrollView.refreshControl = UIRefreshControl()
+        scrollView.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refresh(_ sender: AnyObject) {
+        getSchedule()
     }
     
     func getSchedule() {
@@ -49,6 +56,7 @@ class ScheduleVC: BaseViewController {
                 self.calendarView.reloadData()
                 self.tableView.reloadData()
             }
+            self.scrollView.refreshControl?.endRefreshing()
         }
     }
     
@@ -62,11 +70,11 @@ class ScheduleVC: BaseViewController {
     func handleCellTextColor(cell: DateCell, cellState: CellState) {
         
         if cellState.isSelected {
-            cell.backgroundColor = .main_color
+            cell.containerView.backgroundColor = .main_color
             cell.dotView.backgroundColor = .white
             cell.dateLabel.textColor = .white
         } else {
-            cell.backgroundColor = .clear
+            cell.containerView.backgroundColor = .clear
             cell.dotView.backgroundColor = .main_color
             cell.dateLabel.textColor = .black
         }
@@ -158,6 +166,13 @@ extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ScheduleViewCell.dequeueReuse(tableView: tableView)
         cell.fillData(data: times[indexPath.row])
+        cell.onClickShowDetail = { [weak self] in
+            guard let `self` = self else { return }
+            let vc = ProgramVC()
+            vc.listIds = self.times[indexPath.row].ids
+            vc.titleValue = self.times[indexPath.row].className
+            self.nextScreen(ctrl: vc)
+        }
         return cell
     }
 }

@@ -21,7 +21,7 @@ class BannerViewCell: UICollectionViewCell {
     func fillData(data: BannerModel) {
         titleLabel.text = data.title
         descriptionLabel.text = data.description
-        bannerImageView.loadImage(urlString: data.sourceUrl)
+        bannerImageView.loadImage(urlString: data.sourceUrl, access: "news")
     }
 
 }

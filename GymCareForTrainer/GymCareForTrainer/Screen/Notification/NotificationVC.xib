@@ -26,9 +26,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tab-Ab-pcs" customClass="TypeNavigator" customModule="GymCareForTrainer" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="88"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="88" id="pMv-HN-nZi"/>
+                        <constraint firstAttribute="height" constant="110" id="pMv-HN-nZi"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Thông báo"/>
@@ -36,16 +36,16 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSJ-5r-RiA">
-                    <rect key="frame" x="0.0" y="88" width="393" height="730"/>
+                    <rect key="frame" x="0.0" y="110" width="393" height="708"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có thông báo nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqJ-AX-7UW">
-                            <rect key="frame" x="111" y="355.33333333333331" width="171" height="19.333333333333314"/>
+                            <rect key="frame" x="111" y="344.33333333333331" width="171" height="19.333333333333314"/>
                             <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mt4-Ee-bbL">
-                            <rect key="frame" x="0.0" y="10" width="393" height="710"/>
+                            <rect key="frame" x="0.0" y="10" width="393" height="688"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="HNe-BH-vo8"/>

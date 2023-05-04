@@ -19,15 +19,9 @@ class ManagementViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func fillData(item: MenuItemModel) {
-        iconImageView.image = item.icon
+    func fillData(item: NewsModel) {
+        iconImageView.loadImage(urlString: item.image, access: "news")
         titleLable.text = item.title
-        noteView.isHidden = castToInt(item.badge) == 0
-        if castToInt(item.badge) > 9 {
-            sumLabel.text = "9+"
-        } else {
-            sumLabel.text = castToString(item.badge)
-        }
     }
 
 }

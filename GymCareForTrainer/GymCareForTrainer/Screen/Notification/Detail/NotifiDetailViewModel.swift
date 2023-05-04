@@ -25,4 +25,10 @@ final class NotifiDetailViewModel: BaseViewModel {
             completion(success, msg)
         }
     }
+    
+    func updateStatusNoti(notiId: Int, completion: @escaping () -> Void) {
+        self.repository.updateStatusNoti(notiId: notiId) { data, msg in
+            completion()
+        }
+    }
 }

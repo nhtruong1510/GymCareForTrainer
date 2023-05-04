@@ -93,6 +93,7 @@ class DateElementSchedule: Codable {
 // MARK: - Time
 class Time: Codable {
     var id: Int?
+    var ids: [(Int, Int)] = []
     var time: String?
     var trainerId: Int?
     var isCancelled: Int?
@@ -120,6 +121,7 @@ class Time: Codable {
         case trainerId = "trainer_id"
         case address
         case className = "class"
+        case isCancelled = "is_cancelled"
     }
 }
 

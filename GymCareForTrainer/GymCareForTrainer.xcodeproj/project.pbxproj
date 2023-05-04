@@ -10,6 +10,9 @@
 		071C765B29C70124003587AE /* SubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C765A29C70124003587AE /* SubButton.swift */; };
 		071C765E29C7734E003587AE /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C765D29C7734E003587AE /* AddressModel.swift */; };
 		071C767529C78AB1003587AE /* ScheduleParamObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C767429C78AB1003587AE /* ScheduleParamObject.swift */; };
+		0728DA7929EE4EF9006571FF /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728DA7829EE4EF9006571FF /* EditProfileViewModel.swift */; };
+		075229C42A01324100BA7DFE /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075229C32A01324100BA7DFE /* NewsModel.swift */; };
+		075AADC929F5869700F604D3 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AADC829F5869700F604D3 /* ProgramViewModel.swift */; };
 		0769965229BE333E00EE8626 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769965129BE333E00EE8626 /* ScheduleViewModel.swift */; };
 		0769965429BE336C00EE8626 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769965329BE336C00EE8626 /* ScheduleModel.swift */; };
 		0769965629BE33E400EE8626 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769965529BE33E400EE8626 /* ClassModel.swift */; };
@@ -165,6 +168,9 @@
 		071C765A29C70124003587AE /* SubButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubButton.swift; sourceTree = "<group>"; };
 		071C765D29C7734E003587AE /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		071C767429C78AB1003587AE /* ScheduleParamObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParamObject.swift; sourceTree = "<group>"; };
+		0728DA7829EE4EF9006571FF /* EditProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		075229C32A01324100BA7DFE /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		075AADC829F5869700F604D3 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
 		0769965129BE333E00EE8626 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		0769965329BE336C00EE8626 /* ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		0769965529BE33E400EE8626 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
@@ -752,6 +758,7 @@
 			children = (
 				079D34D729AD14FD006B162F /* EditInforAcCountVC.xib */,
 				079D34D829AD14FD006B162F /* EditInforAcCountVC.swift */,
+				0728DA7829EE4EF9006571FF /* EditProfileViewModel.swift */,
 			);
 			path = EditInforAcCount;
 			sourceTree = "<group>";
@@ -782,8 +789,8 @@
 			children = (
 				079D34E729AD14FD006B162F /* ChatRoomVC.xib */,
 				079D34E829AD14FD006B162F /* ChatRoomVC.swift */,
-				079D34E929AD14FD006B162F /* Cell */,
 				079D34EE29AD14FD006B162F /* ChatRoomViewModel.swift */,
+				079D34E929AD14FD006B162F /* Cell */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -852,6 +859,7 @@
 				0769965729BE340A00EE8626 /* UserModel.swift */,
 				076F67D829C23BCF000DA808 /* NotificationModel.swift */,
 				071C767429C78AB1003587AE /* ScheduleParamObject.swift */,
+				075229C32A01324100BA7DFE /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -920,6 +928,7 @@
 			children = (
 				07F3AA1E29AE61A000F0A541 /* ProgramVC.swift */,
 				07F3AA1F29AE61A000F0A541 /* ProgramVC.xib */,
+				075AADC829F5869700F604D3 /* ProgramViewModel.swift */,
 				07F3AA2029AE61A000F0A541 /* Cell */,
 			);
 			path = Program;
@@ -1160,6 +1169,7 @@
 				071C767529C78AB1003587AE /* ScheduleParamObject.swift in Sources */,
 				079D353B29AD14FE006B162F /* Config.swift in Sources */,
 				079D357529AD14FE006B162F /* ScheduleView.swift in Sources */,
+				075229C42A01324100BA7DFE /* NewsModel.swift in Sources */,
 				079D359629AD14FE006B162F /* ResponseModel.swift in Sources */,
 				079D357429AD14FE006B162F /* InfoUserView.swift in Sources */,
 				079D359229AD14FE006B162F /* ImageCompresor.m in Sources */,
@@ -1170,8 +1180,10 @@
 				071C765B29C70124003587AE /* SubButton.swift in Sources */,
 				079D357B29AD14FE006B162F /* SettingViewModel.swift in Sources */,
 				079D357A29AD14FE006B162F /* SettingVC.swift in Sources */,
+				0728DA7929EE4EF9006571FF /* EditProfileViewModel.swift in Sources */,
 				079D357E29AD14FE006B162F /* HomeView.swift in Sources */,
 				079D358229AD14FE006B162F /* ChatView.swift in Sources */,
+				075AADC929F5869700F604D3 /* ProgramViewModel.swift in Sources */,
 				079D358C29AD14FE006B162F /* MessageVC.swift in Sources */,
 				076F67DF29C23D88000DA808 /* NotifiDetailVC.swift in Sources */,
 				079D358929AD14FE006B162F /* TeacherMessageDetailCell.swift in Sources */,

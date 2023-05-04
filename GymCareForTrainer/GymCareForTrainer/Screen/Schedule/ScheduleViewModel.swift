@@ -43,7 +43,16 @@ final class ScheduleViewModel: BaseViewModel {
         var times: [Time] = []
         for dateElement in getDateElements() where date == dateElement.date {
             guard let time = dateElement.time else { continue }
-            times.append(time)
+            let dupplicateTimes = times.firstIndex(where: {$0.address == time.address && $0.className == time.className && $0.time == time.time})
+            if let dupplicateTimes = dupplicateTimes {
+                times[dupplicateTimes].ids.append((castToInt(time.id), castToInt(time.isCancelled)))
+            } else {
+                time.ids.append((castToInt(time.id), castToInt(time.isCancelled)))
+                times.append(time)
+            }
+//            time.ids.append((castToInt(time.id), castToInt(time.isCancelled)))
+//            times.append(time)
+
         }
         return times
     }
