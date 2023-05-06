@@ -11,6 +11,8 @@
 		071C765E29C7734E003587AE /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C765D29C7734E003587AE /* AddressModel.swift */; };
 		071C767529C78AB1003587AE /* ScheduleParamObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071C767429C78AB1003587AE /* ScheduleParamObject.swift */; };
 		0728DA7929EE4EF9006571FF /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728DA7829EE4EF9006571FF /* EditProfileViewModel.swift */; };
+		07373E302A06B5BE00A94106 /* NotiHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07373E2E2A06B5BE00A94106 /* NotiHeaderCell.swift */; };
+		07373E312A06B5BE00A94106 /* NotiHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07373E2F2A06B5BE00A94106 /* NotiHeaderCell.xib */; };
 		075229C42A01324100BA7DFE /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075229C32A01324100BA7DFE /* NewsModel.swift */; };
 		075AADC929F5869700F604D3 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AADC829F5869700F604D3 /* ProgramViewModel.swift */; };
 		0769965229BE333E00EE8626 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769965129BE333E00EE8626 /* ScheduleViewModel.swift */; };
@@ -29,8 +31,6 @@
 		076F67E029C23D88000DA808 /* NotifiDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F67DD29C23D88000DA808 /* NotifiDetailVC.xib */; };
 		079D342F29AD1391006B162F /* GymCareForTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D342E29AD1391006B162F /* GymCareForTrainerApp.swift */; };
 		079D343729AD1399006B162F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D343629AD1399006B162F /* Preview Assets.xcassets */; };
-		079D344029AD1457006B162F /* TLPhotoPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 079D343F29AD1457006B162F /* TLPhotoPicker */; };
-		079D344429AD14B4006B162F /* JTAppleCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 079D344329AD14B4006B162F /* JTAppleCalendar */; };
 		079D351329AD14FE006B162F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D344629AD14FB006B162F /* Colors.xcassets */; };
 		079D351429AD14FE006B162F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D344729AD14FB006B162F /* Assets.xcassets */; };
 		079D351529AD14FE006B162F /* SFCompactDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079D344929AD14FB006B162F /* SFCompactDisplay-Semibold.ttf */; };
@@ -148,8 +148,6 @@
 		079D35A129AD14FE006B162F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D351029AD14FD006B162F /* APIRouter.swift */; };
 		079D35A229AD14FE006B162F /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D351129AD14FD006B162F /* ApiRepository.swift */; };
 		079D35A329AD14FE006B162F /* APIRouter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D351229AD14FD006B162F /* APIRouter+Extension.swift */; };
-		079D35A629AD1638006B162F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 079D35A529AD1638006B162F /* Moya */; };
-		079D35A929AD1670006B162F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 079D35A829AD1670006B162F /* SDWebImage */; };
 		079D35AE29AD1984006B162F /* ContentProgramVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079D35AB29AD1984006B162F /* ContentProgramVC.xib */; };
 		079D35AF29AD1984006B162F /* ExtracurricularDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D35AC29AD1984006B162F /* ExtracurricularDetailViewModel.swift */; };
 		079D35B029AD1984006B162F /* ContentProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D35AD29AD1984006B162F /* ContentProgramVC.swift */; };
@@ -162,6 +160,7 @@
 		07F3AA3229AE625800F0A541 /* ListStudentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F3AA3029AE625800F0A541 /* ListStudentVC.xib */; };
 		07F3AA3629AE62C700F0A541 /* StudentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F3AA3429AE62C700F0A541 /* StudentViewCell.swift */; };
 		07F3AA3729AE62C700F0A541 /* StudentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F3AA3529AE62C700F0A541 /* StudentViewCell.xib */; };
+		7BF8CFE729F6389C75A12FBE /* Pods_GymCareForTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972A302C8AB3805CC437FD1 /* Pods_GymCareForTrainer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +168,8 @@
 		071C765D29C7734E003587AE /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		071C767429C78AB1003587AE /* ScheduleParamObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParamObject.swift; sourceTree = "<group>"; };
 		0728DA7829EE4EF9006571FF /* EditProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		07373E2E2A06B5BE00A94106 /* NotiHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiHeaderCell.swift; sourceTree = "<group>"; };
+		07373E2F2A06B5BE00A94106 /* NotiHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiHeaderCell.xib; sourceTree = "<group>"; };
 		075229C32A01324100BA7DFE /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		075AADC829F5869700F604D3 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
 		0769965129BE333E00EE8626 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
@@ -320,6 +321,9 @@
 		07F3AA3029AE625800F0A541 /* ListStudentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStudentVC.xib; sourceTree = "<group>"; };
 		07F3AA3429AE62C700F0A541 /* StudentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewCell.swift; sourceTree = "<group>"; };
 		07F3AA3529AE62C700F0A541 /* StudentViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentViewCell.xib; sourceTree = "<group>"; };
+		4F20B65443C435AE2B0A705F /* Pods-GymCareForTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymCareForTrainer.release.xcconfig"; path = "Target Support Files/Pods-GymCareForTrainer/Pods-GymCareForTrainer.release.xcconfig"; sourceTree = "<group>"; };
+		C972A302C8AB3805CC437FD1 /* Pods_GymCareForTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymCareForTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2FE23F7E0652DDC5CD6D558 /* Pods-GymCareForTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymCareForTrainer.debug.xcconfig"; path = "Target Support Files/Pods-GymCareForTrainer/Pods-GymCareForTrainer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,10 +331,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079D344029AD1457006B162F /* TLPhotoPicker in Frameworks */,
-				079D344429AD14B4006B162F /* JTAppleCalendar in Frameworks */,
-				079D35A929AD1670006B162F /* SDWebImage in Frameworks */,
-				079D35A629AD1638006B162F /* Moya in Frameworks */,
+				7BF8CFE729F6389C75A12FBE /* Pods_GymCareForTrainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +365,8 @@
 			children = (
 				076F67D229C2375A000DA808 /* NotificationViewCell.swift */,
 				076F67D329C2375A000DA808 /* NotificationViewCell.xib */,
+				07373E2E2A06B5BE00A94106 /* NotiHeaderCell.swift */,
+				07373E2F2A06B5BE00A94106 /* NotiHeaderCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -383,6 +386,8 @@
 			children = (
 				079D342D29AD1391006B162F /* GymCareForTrainer */,
 				079D342C29AD1391006B162F /* Products */,
+				27DDDB9947145AF786276F42 /* Pods */,
+				42D76252AEB8F4942F336407 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -962,6 +967,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		27DDDB9947145AF786276F42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2FE23F7E0652DDC5CD6D558 /* Pods-GymCareForTrainer.debug.xcconfig */,
+				4F20B65443C435AE2B0A705F /* Pods-GymCareForTrainer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		42D76252AEB8F4942F336407 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C972A302C8AB3805CC437FD1 /* Pods_GymCareForTrainer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -969,9 +991,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 079D343A29AD1399006B162F /* Build configuration list for PBXNativeTarget "GymCareForTrainer" */;
 			buildPhases = (
+				E2E4E999BA0E7B5BA80236F2 /* [CP] Check Pods Manifest.lock */,
 				079D342729AD1391006B162F /* Sources */,
 				079D342829AD1391006B162F /* Frameworks */,
 				079D342929AD1391006B162F /* Resources */,
+				AD230C6AFABA972EB6A47AD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -979,10 +1003,6 @@
 			);
 			name = GymCareForTrainer;
 			packageProductDependencies = (
-				079D343F29AD1457006B162F /* TLPhotoPicker */,
-				079D344329AD14B4006B162F /* JTAppleCalendar */,
-				079D35A529AD1638006B162F /* Moya */,
-				079D35A829AD1670006B162F /* SDWebImage */,
 			);
 			productName = GymCareForTrainer;
 			productReference = 079D342B29AD1391006B162F /* GymCareForTrainer.app */;
@@ -1013,10 +1033,6 @@
 			);
 			mainGroup = 079D342229AD1391006B162F;
 			packageReferences = (
-				079D343E29AD1457006B162F /* XCRemoteSwiftPackageReference "TLPhotoPicker" */,
-				079D344229AD14B4006B162F /* XCRemoteSwiftPackageReference "JTAppleCalendar" */,
-				079D35A429AD1638006B162F /* XCRemoteSwiftPackageReference "Moya" */,
-				079D35A729AD1670006B162F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 079D342C29AD1391006B162F /* Products */;
 			projectDirPath = "";
@@ -1062,6 +1078,7 @@
 				079D358729AD14FE006B162F /* TeacherMessageDetailCell.xib in Resources */,
 				079D351429AD14FE006B162F /* Assets.xcassets in Resources */,
 				076F67E029C23D88000DA808 /* NotifiDetailVC.xib in Resources */,
+				07373E312A06B5BE00A94106 /* NotiHeaderCell.xib in Resources */,
 				079D351729AD14FE006B162F /* SFProDisplay-Regular.ttf in Resources */,
 				079D357829AD14FE006B162F /* EditInforAcCountVC.xib in Resources */,
 				079D353329AD14FE006B162F /* InputPickerView.xib in Resources */,
@@ -1080,6 +1097,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD230C6AFABA972EB6A47AD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymCareForTrainer/Pods-GymCareForTrainer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GymCareForTrainer/Pods-GymCareForTrainer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GymCareForTrainer/Pods-GymCareForTrainer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2E4E999BA0E7B5BA80236F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GymCareForTrainer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		079D342729AD1391006B162F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1089,6 +1148,7 @@
 				079D35A129AD14FE006B162F /* APIRouter.swift in Sources */,
 				079D35A329AD14FE006B162F /* APIRouter+Extension.swift in Sources */,
 				079D359B29AD14FE006B162F /* MetaResponse.swift in Sources */,
+				07373E302A06B5BE00A94106 /* NotiHeaderCell.swift in Sources */,
 				079D353F29AD14FE006B162F /* AboutApp.swift in Sources */,
 				07A2E03629CF2A8500E74483 /* BaseViewController.swift in Sources */,
 				079D359129AD14FE006B162F /* ContentView.swift in Sources */,
@@ -1310,6 +1370,7 @@
 		};
 		079D343B29AD1399006B162F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2FE23F7E0652DDC5CD6D558 /* Pods-GymCareForTrainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1348,6 +1409,7 @@
 		};
 		079D343C29AD1399006B162F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F20B65443C435AE2B0A705F /* Pods-GymCareForTrainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1406,64 +1468,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		079D343E29AD1457006B162F /* XCRemoteSwiftPackageReference "TLPhotoPicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tilltue/TLPhotoPicker";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		079D344229AD14B4006B162F /* XCRemoteSwiftPackageReference "JTAppleCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/patchthecode/JTAppleCalendar.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		079D35A429AD1638006B162F /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		079D35A729AD1670006B162F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		079D343F29AD1457006B162F /* TLPhotoPicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 079D343E29AD1457006B162F /* XCRemoteSwiftPackageReference "TLPhotoPicker" */;
-			productName = TLPhotoPicker;
-		};
-		079D344329AD14B4006B162F /* JTAppleCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 079D344229AD14B4006B162F /* XCRemoteSwiftPackageReference "JTAppleCalendar" */;
-			productName = JTAppleCalendar;
-		};
-		079D35A529AD1638006B162F /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 079D35A429AD1638006B162F /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		079D35A829AD1670006B162F /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 079D35A729AD1670006B162F /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 079D342329AD1391006B162F /* Project object */;
 }

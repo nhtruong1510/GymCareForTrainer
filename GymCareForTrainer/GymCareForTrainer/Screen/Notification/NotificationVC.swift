@@ -11,11 +11,15 @@ import SwiftUI
 class NotificationVC: BaseViewController {
 
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private var listNotifi: [NotifiObject] = []
+    private var listOriginNotifi: [NotifiObject] = []
     private let viewModel = NotificationViewModel()
     private let refreshControl = UIRefreshControl()
     private let userInfo = ServiceSettings.shared.userInfo
+    private let listNotiHeader: [String] = ["Đơn mới", "Đơn đã duyệt", "Đơn đã huỷ"]
+    private var selectedItem: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,8 @@ class NotificationVC: BaseViewController {
     
     private func configUI() {
         tableView.registerCells(from: .notificationViewCell)
+        collectionView.registerCells(from: .notiHeaderCell)
+
         refreshControl.addTarget(self, action: #selector(getListNotify), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
@@ -38,6 +44,8 @@ class NotificationVC: BaseViewController {
             }
             if let notifications = result?.notifications {
                 self.listNotifi = notifications.reversed()
+                self.listOriginNotifi = self.listNotifi
+//                self.filterNoti()
             }
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
@@ -48,6 +56,26 @@ class NotificationVC: BaseViewController {
         let notifyDetailVC = NotifiDetailVC()
         notifyDetailVC.notify = noti
         self.nextScreen(ctrl: notifyDetailVC)
+    }
+    
+    private func reloadData() {
+        collectionView.reloadData() {
+            self.collectionView.scrollToItem(at: IndexPath(item: self.selectedItem, section: 0), at: .right, animated: true)
+        }
+        filterNoti()
+        tableView.reloadData()
+    }
+    
+    private func filterNoti() {
+        switch selectedItem {
+        case 0:
+            listNotifi = listOriginNotifi.filter({$0.status == TypeStatus.viewOnly.rawValue || $0.status == TypeStatus.create.rawValue || $0.status == TypeStatus.update.rawValue})
+        case 1:
+            listNotifi = listOriginNotifi.filter({$0.status == TypeStatus.acceptUpdate.rawValue || $0.status == TypeStatus.acceptCreate.rawValue})
+        case 2:
+            listNotifi = listOriginNotifi.filter({$0.status == TypeStatus.ignore.rawValue})
+        default: break
+        }
     }
 }
 
@@ -75,6 +103,23 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+}
+
+extension NotificationVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = NotiHeaderCell.dequeueReuse(collectionView: collectionView, indexPath: indexPath)
+        cell.fillData(name: listNotiHeader[indexPath.row], isSelected: selectedItem == indexPath.row)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listNotiHeader.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItem = indexPath.row
+        reloadData()
+    }
 }
 
 // 3

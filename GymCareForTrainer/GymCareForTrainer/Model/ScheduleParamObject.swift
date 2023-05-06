@@ -16,6 +16,8 @@ class ScheduleParamObject: Codable {
     var start_date: String?
     var end_date: String?
     var time: String?
+    var time_id: Int?
+    var date_id: Int?
     var money: Int?
     var method: Int?
     var schedule_id: Int?
@@ -27,7 +29,7 @@ class ScheduleParamObject: Codable {
 
     init(customer_id: Int?, address_id: Int?, class_id: Int?, trainer_id: Int?,
          day: String?, start_date: String?, end_date: String?,
-         time: String?, money: Int? = nil, method: Int? = nil, schedule_id: Int? = nil,
+         time: String?, date_id: Int?, time_id: Int?, money: Int? = nil, method: Int? = nil, schedule_id: Int? = nil,
          is_create: Int? = nil, status: Int? = nil, notification_id: Int? = nil) {
         self.customer_id = customer_id
         self.address_id = address_id
@@ -37,6 +39,8 @@ class ScheduleParamObject: Codable {
         self.start_date = start_date
         self.end_date = end_date
         self.time = time
+        self.time_id = time_id
+        self.date_id = date_id
         self.money = money
         self.method = method
         self.schedule_id = schedule_id
@@ -56,6 +60,8 @@ class ScheduleParamObject: Codable {
         dictionary.updateValue(castToString(self.start_date), forKey: "start_date")
         dictionary.updateValue(castToString(self.end_date), forKey: "end_date")
         dictionary.updateValue(castToString(self.time), forKey: "time")
+        dictionary.updateValue(castToString(self.time_id), forKey: "time_id")
+        dictionary.updateValue(castToString(self.date_id), forKey: "date_id")
         dictionary.updateValue(castToString(self.money), forKey: "money")
         dictionary.updateValue(castToString(self.method), forKey: "method")
         dictionary.updateValue(castToString(self.notification_id), forKey: "notification_id")

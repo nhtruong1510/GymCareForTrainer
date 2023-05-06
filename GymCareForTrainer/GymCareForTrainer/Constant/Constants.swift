@@ -283,4 +283,39 @@ enum TypeStatus: Int {
     case acceptCreate
     case create
     case update
+    
+    var text: String {
+        switch self {
+        case .ignore:
+            return "Đã huỷ"
+        case .acceptUpdate, .acceptCreate:
+            return "Đã duyệt"
+        case .viewOnly:
+            return ""
+        case .create, .update:
+            return "Chờ duyệt"
+        }
+    }
+    
+    func getTitleColor() -> UIColor {
+        switch self {
+        case .ignore:
+            return .darkGray
+        default:
+            return .white
+        }
+    }
+    
+    func getViewColor() -> UIColor {
+        switch self {
+        case .create, .update:
+            return UIColor.infoColor
+        case .acceptUpdate, .acceptCreate:
+            return UIColor.successColor
+        case .ignore:
+            return UIColor.lightGrayColor
+        case .viewOnly:
+            return .white
+        }
+    }
 }

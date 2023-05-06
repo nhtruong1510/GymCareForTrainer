@@ -51,7 +51,12 @@ class NotifiDetailVC: BaseViewController {
         dayLabel.text = notify.day
         timeLabel.text = notify.time
         expiredLabel.text = castToString(notify.start_date) + " - " + castToString(notify.end_date)
-        actionView.isHidden = notify.status == TypeStatus.viewOnly.rawValue
+        switch notify.status {
+        case TypeStatus.viewOnly.rawValue, TypeStatus.ignore.rawValue, TypeStatus.acceptCreate.rawValue, TypeStatus.acceptUpdate.rawValue:
+            actionView.isHidden = true
+        default:
+            actionView.isHidden = false
+        }
         if let id = notify.id {
             updateStatusNoti(id: (id))
         }
@@ -114,6 +119,8 @@ class NotifiDetailVC: BaseViewController {
                                             start_date: castToString(self.notify.start_date),
                                             end_date: castToString(self.notify.end_date),
                                             time: castToString(self.notify.time),
+                                            date_id: self.notify.date_id,
+                                            time_id: self.notify.time_id,
                                             money: self.notify.money,
                                             status: status,
                                             notification_id: self.notify.id)

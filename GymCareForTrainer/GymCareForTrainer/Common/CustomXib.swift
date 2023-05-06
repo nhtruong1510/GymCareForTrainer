@@ -26,6 +26,7 @@ enum CustomXib: String {
     
     //MARK: -- HeaderFooter
     case dateHeader = "DateHeader"
+    case notiHeaderCell = "NotiHeaderCell"
 
     func loadNib() -> UINib {
         return UINib(nibName: self.rawValue, bundle: nil)
@@ -147,5 +148,14 @@ extension DateHeader {
             return cell
         }
         fatalError("DEVELOP ERROR: The registered cell type for identifier \"\(CustomXib.dateHeader.rawValue)\"!")
+    }
+}
+
+extension NotiHeaderCell {
+    static func dequeueReuse(collectionView: UICollectionView, indexPath: IndexPath) -> NotiHeaderCell {
+        if let cell = collectionView.dequeReuseCell(xib: .notiHeaderCell, indexPath: indexPath) as? NotiHeaderCell {
+            return cell
+        }
+        fatalError("DEVELOP ERROR: The registered cell type for identifier \"\(CustomXib.notiHeaderCell.rawValue)\"!")
     }
 }

@@ -12,6 +12,8 @@ class NotificationViewCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var alertImageView: UIImageView!
+    @IBOutlet private weak var statusView: UIView!
+    @IBOutlet private weak var statusLabel: UILabel!
 
     var showDetail: (() -> Void)?
 
@@ -26,6 +28,11 @@ class NotificationViewCell: UITableViewCell {
         contentLabel.text = notify.content
         let isRead = castToInt(notify.is_read) == 1
         alertImageView.image = isRead ? #imageLiteral(resourceName: "ic_read") : #imageLiteral(resourceName: "ic_unread")
+        if let status = TypeStatus(rawValue: castToInt(notify.status)) {
+            statusView.backgroundColor = status.getViewColor()
+            statusLabel.textColor = status.getTitleColor()
+            statusLabel.text = status.text
+        }
     }
 
     @IBAction private func showDetailButton(_ sender: Any) {

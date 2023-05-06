@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_read" highlightedImage="ic_unread" translatesAutoresizingMaskIntoConstraints="NO" id="1lr-68-bIA">
-                        <rect key="frame" x="437" y="17" width="16" height="16"/>
+                        <rect key="frame" x="437" y="41.333333333333336" width="16" height="16"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/14/2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ob-qI-XZh">
                         <rect key="frame" x="43.000000000000007" y="15.666666666666664" width="71.666666666666686" height="17"/>
@@ -58,13 +58,37 @@
                         <color key="textColor" name="color_3E4041"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMK-Lp-zrv">
+                        <rect key="frame" x="406.66666666666669" y="12" width="46" height="24"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRh-y4-aSM">
+                                <rect key="frame" x="7" y="4" width="32" height="16"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jRh-y4-aSM" firstAttribute="leading" secondItem="hMK-Lp-zrv" secondAttribute="leading" constant="7" id="5pW-LO-28j"/>
+                            <constraint firstItem="jRh-y4-aSM" firstAttribute="top" secondItem="hMK-Lp-zrv" secondAttribute="top" constant="4" id="SrC-90-GhL"/>
+                            <constraint firstItem="jRh-y4-aSM" firstAttribute="centerY" secondItem="hMK-Lp-zrv" secondAttribute="centerY" id="YP3-Zs-PEN"/>
+                            <constraint firstAttribute="trailing" secondItem="jRh-y4-aSM" secondAttribute="trailing" constant="7" id="gAH-tN-NAd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="r6a-tD-fDW" firstAttribute="top" secondItem="zpp-OI-s5b" secondAttribute="bottom" constant="8" id="1ux-1I-2HM"/>
                     <constraint firstAttribute="trailing" secondItem="uTo-RE-UXh" secondAttribute="trailing" id="91c-5b-09B"/>
                     <constraint firstItem="4EH-SY-dr1" firstAttribute="top" secondItem="uTo-RE-UXh" secondAttribute="bottom" id="A4U-wi-d17"/>
+                    <constraint firstAttribute="trailing" secondItem="hMK-Lp-zrv" secondAttribute="trailing" constant="18.5" id="FnP-tu-Qy5"/>
                     <constraint firstAttribute="bottom" secondItem="4EH-SY-dr1" secondAttribute="bottom" id="Iii-4n-D6X"/>
                     <constraint firstAttribute="trailing" secondItem="r6a-tD-fDW" secondAttribute="trailing" constant="18" id="Mu7-dj-tL7"/>
+                    <constraint firstItem="hMK-Lp-zrv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="PJ2-1b-veH"/>
                     <constraint firstAttribute="trailing" secondItem="1lr-68-bIA" secondAttribute="trailing" constant="18" id="Q1n-NM-PnV"/>
                     <constraint firstItem="4EH-SY-dr1" firstAttribute="top" secondItem="r6a-tD-fDW" secondAttribute="bottom" constant="15.33" id="RU9-AO-5ie"/>
                     <constraint firstItem="uTo-RE-UXh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="V1g-iX-Xmb"/>
@@ -73,7 +97,7 @@
                     <constraint firstAttribute="trailing" secondItem="4EH-SY-dr1" secondAttribute="trailing" id="gr9-Db-fai"/>
                     <constraint firstItem="zpp-OI-s5b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="igk-ca-mOJ"/>
                     <constraint firstItem="r6a-tD-fDW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="jsU-UD-yTl"/>
-                    <constraint firstItem="1lr-68-bIA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="off-RG-2IZ"/>
+                    <constraint firstItem="1lr-68-bIA" firstAttribute="centerY" secondItem="r6a-tD-fDW" secondAttribute="centerY" id="lOP-8a-OMR"/>
                     <constraint firstItem="uTo-RE-UXh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pj2-hf-3Hf"/>
                     <constraint firstItem="4Ob-qI-XZh" firstAttribute="leading" secondItem="zpp-OI-s5b" secondAttribute="trailing" constant="9" id="smX-9Z-rTz"/>
                     <constraint firstItem="4Ob-qI-XZh" firstAttribute="centerY" secondItem="zpp-OI-s5b" secondAttribute="centerY" id="zaQ-R3-AgI"/>
@@ -84,6 +108,8 @@
                 <outlet property="alertImageView" destination="1lr-68-bIA" id="WHR-Tj-9li"/>
                 <outlet property="contentLabel" destination="r6a-tD-fDW" id="Fen-YM-Qh7"/>
                 <outlet property="dateLabel" destination="4Ob-qI-XZh" id="nJ7-11-gSx"/>
+                <outlet property="statusLabel" destination="jRh-y4-aSM" id="2xs-UJ-fPt"/>
+                <outlet property="statusView" destination="hMK-Lp-zrv" id="0Ed-Js-iAx"/>
             </connections>
             <point key="canvasLocation" x="177.86259541984731" y="30.633802816901412"/>
         </tableViewCell>

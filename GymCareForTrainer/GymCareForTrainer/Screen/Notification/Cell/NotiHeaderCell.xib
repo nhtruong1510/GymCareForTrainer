@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NotiHeaderCell" customModule="GymCareForTrainer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="99"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="305" height="99"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml0-2V-bAE">
+                        <rect key="frame" x="10" y="70" width="285" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <color key="textColor" name="main_color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-iA-EJM">
+                        <rect key="frame" x="0.0" y="98" width="305" height="1"/>
+                        <color key="backgroundColor" name="main_color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="tr4-h3-EUn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Ml0-2V-bAE" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="3q5-Fe-wX2"/>
+                <constraint firstAttribute="trailing" secondItem="r5U-iA-EJM" secondAttribute="trailing" id="BYF-V4-KzR"/>
+                <constraint firstItem="r5U-iA-EJM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d7Q-Sk-h3z"/>
+                <constraint firstAttribute="bottom" secondItem="r5U-iA-EJM" secondAttribute="bottom" id="gZ1-1d-VMw"/>
+                <constraint firstItem="Ml0-2V-bAE" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="o4b-y9-TPt"/>
+                <constraint firstItem="Ml0-2V-bAE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="sk7-VD-sty"/>
+            </constraints>
+            <size key="customSize" width="305" height="99"/>
+            <connections>
+                <outlet property="bottomView" destination="r5U-iA-EJM" id="nAh-b2-Tp8"/>
+                <outlet property="nameLabel" destination="Ml0-2V-bAE" id="AJh-ir-hz5"/>
+            </connections>
+            <point key="canvasLocation" x="257.25190839694653" y="4.5774647887323949"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="main_color">
+            <color red="0.94499999284744263" green="0.6470000147819519" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

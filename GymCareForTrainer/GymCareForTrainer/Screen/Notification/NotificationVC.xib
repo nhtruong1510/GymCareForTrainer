@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationVC" customModule="GymCareForTrainer" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="4AR-yn-qKG" id="Xzs-A1-F0g"/>
                 <outlet property="cutomNavi" destination="tab-Ab-pcs" id="2Ho-XE-Wd8"/>
                 <outlet property="tableView" destination="Mt4-Ee-bbL" id="5hO-KJ-srA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,45 +36,67 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHideBackButton" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSJ-5r-RiA">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Inc-9A-MKu">
                     <rect key="frame" x="0.0" y="110" width="393" height="708"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có thông báo nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqJ-AX-7UW">
-                            <rect key="frame" x="111" y="344.33333333333331" width="171" height="19.333333333333314"/>
-                            <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mt4-Ee-bbL">
-                            <rect key="frame" x="0.0" y="10" width="393" height="688"/>
+                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4AR-yn-qKG">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CSy-YT-wMY"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="K6s-IY-z4c">
+                                <size key="itemSize" width="128" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
                             <connections>
-                                <outlet property="dataSource" destination="-1" id="HNe-BH-vo8"/>
-                                <outlet property="delegate" destination="-1" id="1zf-7a-u00"/>
+                                <outlet property="dataSource" destination="-1" id="mAQ-CZ-g7r"/>
+                                <outlet property="delegate" destination="-1" id="2k4-ut-7ho"/>
                             </connections>
-                        </tableView>
+                        </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSJ-5r-RiA">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="708"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có thông báo nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqJ-AX-7UW">
+                                    <rect key="frame" x="111" y="344.66666666666669" width="171" height="18.666666666666686"/>
+                                    <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mt4-Ee-bbL">
+                                    <rect key="frame" x="0.0" y="10" width="393" height="688"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="HNe-BH-vo8"/>
+                                        <outlet property="delegate" destination="-1" id="1zf-7a-u00"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="lqJ-AX-7UW" firstAttribute="centerY" secondItem="wSJ-5r-RiA" secondAttribute="centerY" id="9Ae-Dd-EtM"/>
+                                <constraint firstItem="Mt4-Ee-bbL" firstAttribute="top" secondItem="wSJ-5r-RiA" secondAttribute="top" constant="10" id="Pz5-o6-J4J"/>
+                                <constraint firstAttribute="trailing" secondItem="Mt4-Ee-bbL" secondAttribute="trailing" id="QxJ-Nb-q3O"/>
+                                <constraint firstAttribute="bottom" secondItem="Mt4-Ee-bbL" secondAttribute="bottom" constant="10" id="YFF-iE-yea"/>
+                                <constraint firstItem="Mt4-Ee-bbL" firstAttribute="leading" secondItem="wSJ-5r-RiA" secondAttribute="leading" id="dmP-qI-BVA"/>
+                                <constraint firstItem="lqJ-AX-7UW" firstAttribute="centerX" secondItem="wSJ-5r-RiA" secondAttribute="centerX" id="gDf-IK-xBt"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstItem="lqJ-AX-7UW" firstAttribute="centerY" secondItem="wSJ-5r-RiA" secondAttribute="centerY" id="9Ae-Dd-EtM"/>
-                        <constraint firstItem="Mt4-Ee-bbL" firstAttribute="top" secondItem="wSJ-5r-RiA" secondAttribute="top" constant="10" id="Pz5-o6-J4J"/>
-                        <constraint firstAttribute="trailing" secondItem="Mt4-Ee-bbL" secondAttribute="trailing" id="QxJ-Nb-q3O"/>
-                        <constraint firstAttribute="bottom" secondItem="Mt4-Ee-bbL" secondAttribute="bottom" constant="10" id="YFF-iE-yea"/>
-                        <constraint firstItem="Mt4-Ee-bbL" firstAttribute="leading" secondItem="wSJ-5r-RiA" secondAttribute="leading" id="dmP-qI-BVA"/>
-                        <constraint firstItem="lqJ-AX-7UW" firstAttribute="centerX" secondItem="wSJ-5r-RiA" secondAttribute="centerX" id="gDf-IK-xBt"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Inc-9A-MKu" secondAttribute="trailing" id="2Kj-zO-fEg"/>
                 <constraint firstAttribute="trailing" secondItem="tab-Ab-pcs" secondAttribute="trailing" id="6hX-LX-CX5"/>
                 <constraint firstItem="tab-Ab-pcs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8cO-Ub-6dH"/>
-                <constraint firstItem="wSJ-5r-RiA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bal-BQ-IG3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wSJ-5r-RiA" secondAttribute="bottom" id="CgP-2L-HXD"/>
-                <constraint firstItem="wSJ-5r-RiA" firstAttribute="top" secondItem="tab-Ab-pcs" secondAttribute="bottom" id="GWR-4d-k4f"/>
                 <constraint firstItem="tab-Ab-pcs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IZM-1o-04h"/>
-                <constraint firstAttribute="trailing" secondItem="wSJ-5r-RiA" secondAttribute="trailing" id="NqA-S2-bfd"/>
+                <constraint firstItem="Inc-9A-MKu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VQQ-uB-iqF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Inc-9A-MKu" secondAttribute="bottom" id="aNg-Fn-Jgy"/>
+                <constraint firstItem="Inc-9A-MKu" firstAttribute="top" secondItem="tab-Ab-pcs" secondAttribute="bottom" id="isC-uz-EYw"/>
             </constraints>
             <point key="canvasLocation" x="72.51908396946564" y="-12.67605633802817"/>
         </view>
