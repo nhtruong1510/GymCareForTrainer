@@ -152,6 +152,10 @@
 		079D35AF29AD1984006B162F /* ExtracurricularDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D35AC29AD1984006B162F /* ExtracurricularDetailViewModel.swift */; };
 		079D35B029AD1984006B162F /* ContentProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D35AD29AD1984006B162F /* ContentProgramVC.swift */; };
 		07A2E03629CF2A8500E74483 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A2E03529CF2A8500E74483 /* BaseViewController.swift */; };
+		07F201502A0C8DD800478BF6 /* ManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2014E2A0C8DD800478BF6 /* ManageVC.swift */; };
+		07F201512A0C8DD800478BF6 /* ManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F2014F2A0C8DD800478BF6 /* ManageVC.xib */; };
+		07F201552A0C8EE800478BF6 /* ManageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F201532A0C8EE800478BF6 /* ManageViewCell.swift */; };
+		07F201562A0C8EE800478BF6 /* ManageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F201542A0C8EE800478BF6 /* ManageViewCell.xib */; };
 		07F3AA2729AE61A100F0A541 /* ProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F3AA1E29AE61A000F0A541 /* ProgramVC.swift */; };
 		07F3AA2829AE61A100F0A541 /* ProgramVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F3AA1F29AE61A000F0A541 /* ProgramVC.xib */; };
 		07F3AA2929AE61A100F0A541 /* ProgramViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F3AA2129AE61A000F0A541 /* ProgramViewCell.xib */; };
@@ -313,6 +317,10 @@
 		079D35AC29AD1984006B162F /* ExtracurricularDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtracurricularDetailViewModel.swift; sourceTree = "<group>"; };
 		079D35AD29AD1984006B162F /* ContentProgramVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProgramVC.swift; sourceTree = "<group>"; };
 		07A2E03529CF2A8500E74483 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		07F2014E2A0C8DD800478BF6 /* ManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageVC.swift; sourceTree = "<group>"; };
+		07F2014F2A0C8DD800478BF6 /* ManageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageVC.xib; sourceTree = "<group>"; };
+		07F201532A0C8EE800478BF6 /* ManageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewCell.swift; sourceTree = "<group>"; };
+		07F201542A0C8EE800478BF6 /* ManageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageViewCell.xib; sourceTree = "<group>"; };
 		07F3AA1E29AE61A000F0A541 /* ProgramVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramVC.swift; sourceTree = "<group>"; };
 		07F3AA1F29AE61A000F0A541 /* ProgramVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramVC.xib; sourceTree = "<group>"; };
 		07F3AA2129AE61A000F0A541 /* ProgramViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramViewCell.xib; sourceTree = "<group>"; };
@@ -346,6 +354,16 @@
 				079D347A29AD14FC006B162F /* DefaultButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		0748D3952A0C85D500CD12BB /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				07F201522A0C8EC900478BF6 /* Cell */,
+				07F2014E2A0C8DD800478BF6 /* ManageVC.swift */,
+				07F2014F2A0C8DD800478BF6 /* ManageVC.xib */,
+			);
+			path = Manage;
 			sourceTree = "<group>";
 		};
 		076F67CC29C23707000DA808 /* Notification */ = {
@@ -753,6 +771,7 @@
 				079D34D529AD14FD006B162F /* OtherViewModel.swift */,
 				079D34D629AD14FD006B162F /* EditInforAcCount */,
 				079D34D929AD14FD006B162F /* Setting */,
+				0748D3952A0C85D500CD12BB /* Manage */,
 				079D34DD29AD14FD006B162F /* OtherVC.swift */,
 			);
 			path = Other;
@@ -928,6 +947,15 @@
 			path = ContentProgram;
 			sourceTree = "<group>";
 		};
+		07F201522A0C8EC900478BF6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				07F201532A0C8EE800478BF6 /* ManageViewCell.swift */,
+				07F201542A0C8EE800478BF6 /* ManageViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		07F3AA1D29AE61A000F0A541 /* Program */ = {
 			isa = PBXGroup;
 			children = (
@@ -1051,6 +1079,7 @@
 				079D357629AD14FE006B162F /* OtherVC.xib in Resources */,
 				076F67D529C2375A000DA808 /* NotificationViewCell.xib in Resources */,
 				079D352C29AD14FE006B162F /* TypeNavigator.xib in Resources */,
+				07F201562A0C8EE800478BF6 /* ManageViewCell.xib in Resources */,
 				079D359029AD14FE006B162F /* MessageVC.xib in Resources */,
 				07F3AA2929AE61A100F0A541 /* ProgramViewCell.xib in Resources */,
 				079D352829AD14FE006B162F /* AlertVC.xib in Resources */,
@@ -1070,6 +1099,7 @@
 				079D351A29AD14FE006B162F /* SFProDisplay-Semibold.ttf in Resources */,
 				079D355329AD14FE006B162F /* ScheduleViewCell.xib in Resources */,
 				079D355829AD14FE006B162F /* DateCell.xib in Resources */,
+				07F201512A0C8DD800478BF6 /* ManageVC.xib in Resources */,
 				079D358A29AD14FE006B162F /* OwnerMessageDetailCell.xib in Resources */,
 				079D352929AD14FE006B162F /* ConfirmVC.xib in Resources */,
 				079D354B29AD14FE006B162F /* ManagementView.xib in Resources */,
@@ -1174,6 +1204,7 @@
 				079D353E29AD14FE006B162F /* CustomXib.swift in Sources */,
 				079D35A029AD14FE006B162F /* RegionObject.swift in Sources */,
 				079D354429AD14FE006B162F /* NotiView.swift in Sources */,
+				07F201552A0C8EE800478BF6 /* ManageViewCell.swift in Sources */,
 				079D354D29AD14FE006B162F /* BannerCollectionViewFlowLayout.swift in Sources */,
 				079D357D29AD14FE006B162F /* OtherVC.swift in Sources */,
 				079D358829AD14FE006B162F /* OwnerMessageDetailCell.swift in Sources */,
@@ -1213,6 +1244,7 @@
 				079D354329AD14FE006B162F /* HomeVC.swift in Sources */,
 				079D359E29AD14FE006B162F /* Product.swift in Sources */,
 				07F3AA3629AE62C700F0A541 /* StudentViewCell.swift in Sources */,
+				07F201502A0C8DD800478BF6 /* ManageVC.swift in Sources */,
 				079D353629AD14FE006B162F /* InputFieldView.swift in Sources */,
 				079D359529AD14FE006B162F /* BannerModel.swift in Sources */,
 				0769965229BE333E00EE8626 /* ScheduleViewModel.swift in Sources */,

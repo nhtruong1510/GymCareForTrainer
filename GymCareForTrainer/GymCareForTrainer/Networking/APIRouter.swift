@@ -84,6 +84,7 @@ enum APIRouter {
     case updateStatusNoti(Int)
     case listStudent(Int, Int)
     case news
+    case classes(Int)
 
 }
 
@@ -116,6 +117,7 @@ extension APIRouter: TargetType {
         case .updateStatusNoti: return EndPointURL.UPDATE_STATUS_NOTIFICATION
         case .listStudent: return EndPointURL.LIST_STUDENT
         case .news: return EndPointURL.NEWS
+        case .classes: return EndPointURL.LIST_CLASSES
 
         }
     }
@@ -179,6 +181,8 @@ extension APIRouter: TargetType {
             return .requestParameters(parameters: ["notification_id": notiId], encoding: JSONEncoding.default)
         case .listStudent(let timeId, let isCancelled):
             return .requestParameters(parameters: ["time_id": timeId, "is_cancelled": isCancelled], encoding: URLEncoding.queryString)
+        case .classes(let trainer_id):
+            return .requestParameters(parameters: ["trainer_id": trainer_id], encoding: URLEncoding.queryString)
         default:
             return .requestPlain
         }

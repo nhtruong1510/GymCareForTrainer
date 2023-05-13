@@ -18,10 +18,9 @@ class NotiViewCell: UITableViewCell {
 
     }
 
-    func fillData(data: NotificationModel) {
-//        dateLabel.text = data.date
-//        titleLabel.text = data.title
-//        descriptionLabel.text = data.description
+    func fillData(data: Time) {
+        dateLabel.text = "Lớp " + castToString(data.className)
+        titleLabel.text = castToString(data.time) + ", " + castToString(data.date)
     }
 
 }

@@ -126,6 +126,7 @@ struct EndPointURL {
     static let UPDATE_STATUS_NOTIFICATION: String = versionJsonOnly + "controller/update_noti_status" + Constants.SUFFIX_JSON
     static let LIST_STUDENT: String = versionJson + "list_student" + Constants.SUFFIX_JSON
     static let NEWS: String = versionJson + "news" + Constants.SUFFIX_JSON
+    static let LIST_CLASSES: String = versionJson + "class" + Constants.SUFFIX_JSON
 
 }
 

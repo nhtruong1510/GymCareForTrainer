@@ -343,4 +343,22 @@ class ApiRepository: IApiRepository {
             }
         }
     }
+    
+    func getClasses(trainerId: Int, completion: @escaping ([ScheduleClass]?, String?) -> Void) {
+        NetworkManager.request(.classes(trainerId)) { result in
+            switch result {
+            case .success(let res):
+                if let response = try? JSONDecoder().decode(ResponseModel<[ScheduleClass]>.self, from: res.data),
+                   let status = response.status {
+                    if status {
+                        completion(response.data, nil)
+                    } else {
+                        completion(nil, response.message)
+                    }
+                }
+            case .failure(let err):
+                completion(nil, err.localizedDescription)
+            }
+        }
+    }
 }

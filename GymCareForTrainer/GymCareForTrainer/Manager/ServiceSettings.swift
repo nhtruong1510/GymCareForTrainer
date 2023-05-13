@@ -21,6 +21,7 @@ public class ServiceSettings {
         static let isRegisterDevice = "IS_REGISTER_DEVICE"
         static let isPushRemote = "KEY_PUSH_REMOTE"
         static let keyInfoPush = "KEY_INFOR_PUSH"
+        static let listLastestSchedule = "KEY_REGISTERED_CLASS"
     }
 
     public static var shared = ServiceSettings()
@@ -101,6 +102,26 @@ public class ServiceSettings {
         set {
             userDefaults.set(newValue, forKey: Keys.isPushRemote)
             userDefaults.synchronize()
+        }
+    }
+    
+    var listLastestSchedule: [Time] {
+        get {
+            if let objects = userDefaults.value(forKey: Keys.listLastestSchedule) as? Data {
+                let decoder = JSONDecoder()
+                if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [Time] {
+                    return objectsDecoded
+                } else {
+                    return []
+                }
+            }
+            return []
+        }
+        set {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(newValue) {
+                userDefaults.set(encoded, forKey: Keys.listLastestSchedule)
+            }
         }
     }
 }

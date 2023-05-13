@@ -17,4 +17,10 @@ final class ProgramViewModel: BaseViewModel {
             completion(data, msg)
         }
     }
+    
+    func getClasses(trainerId: Int, completion: @escaping ([ScheduleClass]?, String?) -> Void) {
+        self.repository.getClasses(trainerId: trainerId) { data, msg in
+            completion(data, msg)
+        }
+    }
 }

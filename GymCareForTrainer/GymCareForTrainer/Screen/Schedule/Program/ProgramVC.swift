@@ -9,13 +9,22 @@ import UIKit
 
 class ProgramVC: BaseViewController {
 
+    enum TypeData {
+        case customer
+        case classes
+        case datetime
+        case customerClass
+    }
+    
     @IBOutlet private weak var tableView: UITableView!
 
     var titleValue: String?
     var listIds: [(id: Int, isCancelled: Int)] = []
-
-    private var listSearchData: [UserModel] = []
+    var listSearchData: [UserModel] = []
+    var listTimes: [TimeClass] = []
+    var type = TypeData.customer
     private var viewModel = ProgramViewModel()
+    private var listScheduleClass: [ScheduleClass] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +39,13 @@ class ProgramVC: BaseViewController {
         }
         tableView.registerCells(from: .programViewCell)
         tableView.tableFooterView = UIView()
-        getSchedule()
+        switch type {
+        case .customer:
+            getSchedule()
+        case .classes:
+            getClasses()
+        default: break
+        }
     }
     
     func getSchedule() {
@@ -49,6 +64,18 @@ class ProgramVC: BaseViewController {
         }
     }
 
+    private func getClasses() {
+        viewModel.getClasses(trainerId: castToInt(ServiceSettings.shared.userInfo?.id)) { data, msg in
+            if let msg = msg {
+                AlertVC.show(viewController: self, msg: msg)
+            } else {
+                if let data = data {
+                    self.listScheduleClass = data
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
@@ -58,12 +85,28 @@ extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listSearchData.count
+        switch type {
+        case .customer, .customerClass:
+            return listSearchData.count
+        case .classes:
+            return listScheduleClass.count
+        default:
+            return listTimes.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProgramViewCell.dequeueReuse(tableView: tableView)
-        cell.fillData(data: listSearchData[indexPath.row])
+        switch type {
+        case .customer:
+            cell.fillData(data: listSearchData[indexPath.row])
+        case .classes:
+            cell.fillData(data: listScheduleClass[indexPath.row])
+        case .datetime:
+            cell.fillData(data: listTimes[indexPath.row])
+        case .customerClass:
+            cell.fillDataClass(data: listSearchData[indexPath.row])
+        }
         return cell
     }
 
@@ -72,8 +115,32 @@ extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = ListStudentVC()
-//        self.nextScreen(ctrl: vc)
+        switch type {
+        case .customer, .customerClass:
+            let vc = ListStudentVC()
+            self.nextScreen(ctrl: vc)
+        case .classes:
+            if castToInt(listScheduleClass[indexPath.row].time?.count) == 1 {
+                let vc = ProgramVC()
+                vc.listSearchData = listTimes[indexPath.row].customer ?? []
+                vc.titleValue = "Danh sách lớp"
+                vc.type = .customerClass
+                nextScreen(ctrl: vc)
+                return
+            }
+            let vc = ProgramVC()
+            vc.listTimes = listScheduleClass[indexPath.row].time ?? []
+            vc.type = .datetime
+            vc.titleValue = listScheduleClass[indexPath.row].datumClass?.name
+            nextScreen(ctrl: vc)
+        case .datetime:
+            let vc = ProgramVC()
+            vc.listSearchData = listTimes[indexPath.row].customer ?? []
+            vc.titleValue = "Danh sách học viên"
+            vc.type = .customerClass
+            nextScreen(ctrl: vc)
+        }
+
     }
 
 }

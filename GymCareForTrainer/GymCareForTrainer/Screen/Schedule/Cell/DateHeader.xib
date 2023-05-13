@@ -29,7 +29,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alG-N7-VoR">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alG-N7-VoR">
                         <rect key="frame" x="245" y="80" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="tCz-WQ-9eb"/>
@@ -42,7 +42,7 @@
                             <action selector="rightClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="VfH-ky-hXq"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5m-eO-NWF">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5m-eO-NWF">
                         <rect key="frame" x="20" y="80" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="SvJ-WM-t78"/>

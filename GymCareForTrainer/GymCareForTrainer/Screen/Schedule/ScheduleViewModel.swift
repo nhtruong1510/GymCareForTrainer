@@ -50,9 +50,14 @@ final class ScheduleViewModel: BaseViewModel {
                 time.ids.append((castToInt(time.id), castToInt(time.isCancelled)))
                 times.append(time)
             }
-//            time.ids.append((castToInt(time.id), castToInt(time.isCancelled)))
-//            times.append(time)
-
+        }
+        let futureTimes = times.filter({castToString($0.date).formatToDate(Constants.DATE_PARAM_FORMAT) >= Date()})
+        if futureTimes.count > 0 {
+            var listNextSchedule: [Time] = [futureTimes[0]]
+            if futureTimes.count > 1 {
+                listNextSchedule.append(futureTimes[1])
+            }
+            ServiceSettings.shared.listLastestSchedule = listNextSchedule
         }
         return times
     }

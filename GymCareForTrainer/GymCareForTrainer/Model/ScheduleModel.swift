@@ -42,3 +42,35 @@ class DateSchedule {
     var trainer: Trainer?
     var scheduleClass: Class?
 }
+
+// MARK: - Datum
+class ScheduleClass: Codable {
+    var datumClass: Class?
+    var address: Address?
+    var time: [TimeClass]?
+
+    enum CodingKeys: String, CodingKey {
+        case datumClass = "class"
+        case address, time
+    }
+
+    init(datumClass: Class?, address: Address?, time: [TimeClass]?) {
+        self.datumClass = datumClass
+        self.address = address
+        self.time = time
+    }
+}
+
+// MARK: - Time
+class TimeClass: Codable {
+    var id: Int?
+    var time, date: String?
+    var customer: [UserModel]?
+
+    init(id: Int?, time: String?, date: String?, customer: [UserModel]?) {
+        self.id = id
+        self.time = time
+        self.date = date
+        self.customer = customer
+    }
+}

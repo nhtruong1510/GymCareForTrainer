@@ -100,6 +100,7 @@ class Time: Codable {
     var trainer: Trainer?
     var address: String?
     var className: String?
+    var date: String?
 
     init(id: Int?, time: String?, trainerId: Int?, trainer: Trainer?, address: String?, className: String?) {
         self.id = id

@@ -52,15 +52,17 @@ class HomeVC: BaseViewController {
 //        stackView.addArrangedSubview(bannerView)
 //        bannerView.isHidden = true
         stackView.addArrangedSubview(notiView)
-//        notiView.isHidden = true
+        notiView.isHidden = true
         stackView.addArrangedSubview(managementView)
-//        managementView.isHidden = true
+        managementView.isHidden = true
         avatarStudentView.setupAvatarView(avatar: userInfo?.avatar, gender: userInfo?.gender)
         nameStudentLabel.text = userInfo?.name
     }
 
     private func setupNavi() {
-
+        DispatchQueue.main.async {
+            self.notiView.reloadData(notis: ServiceSettings.shared.listLastestSchedule)
+        }
     }
 
     private func fillData(data: [NewsModel]) {

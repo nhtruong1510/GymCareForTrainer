@@ -103,7 +103,8 @@ class ScheduleVC: BaseViewController {
     
     @IBAction private func updateSchedule() {
         let vc = ProgramVC()
-        vc.titleValue = "Các lớp đang tham gia"
+        vc.titleValue = "Các lớp đang quản lý"
+        vc.type = .classes
         self.nextScreen(ctrl: vc)
     }
 }
