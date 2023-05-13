@@ -15,6 +15,8 @@ class MessageViewCell: UITableViewCell {
     @IBOutlet private weak var titleInfoLabel: UILabel!
     @IBOutlet private weak var isReadView: UIView!
     
+    var onClick: (() -> Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -38,4 +40,7 @@ class MessageViewCell: UITableViewCell {
         isReadView.isHidden = isStartMsg
     }
     
+    @IBAction private func onClickMessage() {
+        onClick?()
+    }
 }

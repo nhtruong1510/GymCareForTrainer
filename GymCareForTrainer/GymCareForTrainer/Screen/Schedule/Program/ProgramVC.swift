@@ -118,7 +118,7 @@ extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
         switch type {
         case .customer, .customerClass:
             let vc = ListStudentVC()
-            self.nextScreen(ctrl: vc)
+//            self.nextScreen(ctrl: vc)
         case .classes:
             if castToInt(listScheduleClass[indexPath.row].time?.count) == 1 {
                 let vc = ProgramVC()

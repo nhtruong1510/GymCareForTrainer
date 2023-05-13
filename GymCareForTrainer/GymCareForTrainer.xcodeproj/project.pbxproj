@@ -29,6 +29,7 @@
 		076F67DE29C23D88000DA808 /* NotifiDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F67DB29C23D88000DA808 /* NotifiDetailViewModel.swift */; };
 		076F67DF29C23D88000DA808 /* NotifiDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F67DC29C23D88000DA808 /* NotifiDetailVC.swift */; };
 		076F67E029C23D88000DA808 /* NotifiDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F67DD29C23D88000DA808 /* NotifiDetailVC.xib */; };
+		0785D4572A10025B002DACD3 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785D4562A10025B002DACD3 /* UIWindow+Extension.swift */; };
 		079D342F29AD1391006B162F /* GymCareForTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D342E29AD1391006B162F /* GymCareForTrainerApp.swift */; };
 		079D343729AD1399006B162F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D343629AD1399006B162F /* Preview Assets.xcassets */; };
 		079D351329AD14FE006B162F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D344629AD14FB006B162F /* Colors.xcassets */; };
@@ -190,6 +191,7 @@
 		076F67DB29C23D88000DA808 /* NotifiDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifiDetailViewModel.swift; sourceTree = "<group>"; };
 		076F67DC29C23D88000DA808 /* NotifiDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifiDetailVC.swift; sourceTree = "<group>"; };
 		076F67DD29C23D88000DA808 /* NotifiDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotifiDetailVC.xib; sourceTree = "<group>"; };
+		0785D4562A10025B002DACD3 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		079D342B29AD1391006B162F /* GymCareForTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymCareForTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079D342E29AD1391006B162F /* GymCareForTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymCareForTrainerApp.swift; sourceTree = "<group>"; };
 		079D343429AD1399006B162F /* GymCareForTrainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GymCareForTrainer.entitlements; sourceTree = "<group>"; };
@@ -489,34 +491,19 @@
 		079D345329AD14FC006B162F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0785D4562A10025B002DACD3 /* UIWindow+Extension.swift */,
 				079D345429AD14FC006B162F /* UIImageView+Extension.swift */,
 				079D345529AD14FC006B162F /* UIFont+Extension.swift */,
 				079D345629AD14FC006B162F /* Date+Extension.swift */,
 				079D345729AD14FC006B162F /* UIView+Extension.swift */,
 				079D345829AD14FC006B162F /* String+Extension.swift */,
 				079D345929AD14FC006B162F /* Color+Extension.swift */,
-				079D345A29AD14FC006B162F /* Advanced_Android */,
 				079D345C29AD14FC006B162F /* UserDefaults+Extension.swift */,
 				079D345D29AD14FC006B162F /* Notification+Extension.swift */,
 				079D345E29AD14FC006B162F /* Color.swift */,
 				079D345F29AD14FC006B162F /* UITableView+Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		079D345A29AD14FC006B162F /* Advanced_Android */ = {
-			isa = PBXGroup;
-			children = (
-				079D345B29AD14FC006B162F /* Advanced_Android */,
-			);
-			path = Advanced_Android;
-			sourceTree = "<group>";
-		};
-		079D345B29AD14FC006B162F /* Advanced_Android */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Advanced_Android;
 			sourceTree = "<group>";
 		};
 		079D346029AD14FC006B162F /* CustomView */ = {
@@ -1239,6 +1226,7 @@
 				079D358B29AD14FE006B162F /* ChatRoomViewModel.swift in Sources */,
 				076F67D929C23BCF000DA808 /* NotificationModel.swift in Sources */,
 				079D358629AD14FE006B162F /* ChatRoomVC.swift in Sources */,
+				0785D4572A10025B002DACD3 /* UIWindow+Extension.swift in Sources */,
 				079D353229AD14FE006B162F /* CustomTextField.swift in Sources */,
 				0769965829BE340A00EE8626 /* UserModel.swift in Sources */,
 				079D354329AD14FE006B162F /* HomeVC.swift in Sources */,

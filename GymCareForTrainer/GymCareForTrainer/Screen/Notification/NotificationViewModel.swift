@@ -9,8 +9,8 @@ import Foundation
 
 final class NotificationViewModel: BaseViewModel {
 
-    func callApiGetSchedule(customerId: Int, completion: @escaping (NotificationModel?, String?) -> Void) {
-        self.repository.getNotification(customerId: customerId) { data, msg in
+    func callApiGetSchedule(showLoading: Bool, customerId: Int, completion: @escaping (NotificationModel?, String?) -> Void) {
+        self.repository.getNotification(showLoading: showLoading, customerId: customerId) { data, msg in
             completion(data, msg)
         }
     }

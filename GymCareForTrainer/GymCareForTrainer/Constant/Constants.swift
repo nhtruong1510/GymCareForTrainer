@@ -15,7 +15,7 @@ struct Constants {
     static let MAX_UPLOAD_IMAGE: Float = 2.0
     static let DEALY_TIME = DispatchTimeInterval.seconds(1)
     static let DATE_TIME_FORMAT = "yyyy-MM-dd hh:mm:ss"
-    static let DATE_TIME_FORMAT_2 = "dd/MM/yyyy hh:mm:ss"
+    static let DATE_TIME_FORMAT_2 = "dd/MM/yyyy HH:mm:ss"
     static let DATE_TIME_FORMAT_3 = "hh:mm, dd/MM/yyyy"
     static let DATE_TIME_FORMAT_4 = "hh:mm, dd/MM"
     static let DATE_MONTH_FORMAT = "dd/MM"

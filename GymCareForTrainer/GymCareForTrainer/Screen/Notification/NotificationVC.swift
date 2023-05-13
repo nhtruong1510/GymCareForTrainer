@@ -24,7 +24,7 @@ class NotificationVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-        getListNotify()
+        getListNotify(showLoading: true)
     }
     
     private func configUI() {
@@ -35,8 +35,8 @@ class NotificationVC: BaseViewController {
         tableView.addSubview(refreshControl)
     }
 
-    @objc private func getListNotify() {
-        viewModel.callApiGetSchedule(customerId: castToInt(userInfo?.id)) { [weak self] result, error in
+    @objc private func getListNotify(showLoading: Bool) {
+        viewModel.callApiGetSchedule(showLoading: showLoading, customerId: castToInt(userInfo?.id)) { [weak self] result, error in
             guard let `self` = self else { return }
             if let error = error {
                 AlertVC.show(viewController: self, msg: error)
