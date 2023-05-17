@@ -79,7 +79,9 @@ public class ServiceSettings {
 //        ServiceSettings.shared.students.removeAll()
 //        ServiceSettings.shared.accessToken = nil
 //        ServiceSettings.shared.studentInfo = nil
-//        ServiceSettings.shared.parentInfo = nil
+        ServiceSettings.shared.userInfo = nil
+        ServiceSettings.shared.listLastestSchedule.removeAll()
+
 //        ServiceSettings.shared.isRegisterDevice = false
 //        ServiceSettings.shared.locale = SettingLanguageVC.TagButton.vi.getTitle()
 //        AppDelegate.shared.setRootVC()

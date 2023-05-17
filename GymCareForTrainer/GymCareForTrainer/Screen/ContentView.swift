@@ -34,7 +34,7 @@ struct ContentView: View {
                         .padding(.bottom)
                 }
                 
-                HStack {
+                VStack {
                     NavigationLink(destination: TabbarView(), isActive: $showTabbarView) {
                         EmptyView()
                     }
@@ -44,28 +44,29 @@ struct ContentView: View {
                         let viewModel = LoginViewModel()
                         viewModel.callApiLogin(email: $phone.wrappedValue, pass: $password.wrappedValue) { success, error in
                             if success {
-                                showTabbarView = true
+                                self.showTabbarView = true
+                            } else {
+                                self.showTabbarView = false
                             }
                         }
                     })
-                            .padding()
-                            .background(Color.main_color)
-                            .foregroundColor(.white)
-                            .clipShape(Capsule())
-                            .font(.system(size: 16, weight: Font.Weight.bold))
-                            .frame(width: 300)
+                    .padding()
+                    .background(Color.main_color)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
+                    .font(.system(size: 16, weight: Font.Weight.bold))
+                    .frame(width: 300)
                     
                 }
                 .background(Color.main_color)
                 .clipShape(Capsule())
                 .padding(10)
                 
-                NavigationLink(destination: RegisterView()) {
-                    Text("Đăng ký")
-                        .foregroundColor(Color.main_color)
-                        .font(.system(size: 16, weight: Font.Weight.regular))
+                NavigationLink(destination: EmptyView()) {
+                    EmptyView()
                 }
             }
+            .padding()
         }
         .toolbar(.hidden, for: .navigationBar)
         .onAppear {

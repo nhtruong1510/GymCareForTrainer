@@ -15,9 +15,9 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var cutomNavi: TypeNavigator!
 
     override func viewDidLoad() {
-//        self.navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.isHidden = true
-//        navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {

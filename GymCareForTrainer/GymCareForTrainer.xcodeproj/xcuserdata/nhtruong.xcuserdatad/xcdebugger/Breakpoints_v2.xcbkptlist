@@ -14,8 +14,8 @@
             filePath = "GymCareForTrainer/Screen/Notification/Detail/NotifiDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "createPayment(_:)"
             landmarkType = "7">
          </BreakpointContent>

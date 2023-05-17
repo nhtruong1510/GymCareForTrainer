@@ -20,4 +20,10 @@ final class NotificationViewModel: BaseViewModel {
             completion()
         }
     }
+    
+    func getClasses(trainerId: Int, completion: @escaping ([ScheduleClass]?, String?) -> Void) {
+        self.repository.getClasses(trainerId: trainerId) { data, msg in
+            completion(data, msg)
+        }
+    }
 }

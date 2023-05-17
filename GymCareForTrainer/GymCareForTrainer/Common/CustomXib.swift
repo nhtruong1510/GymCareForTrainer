@@ -23,7 +23,8 @@ enum CustomXib: String {
     case programViewCell = "ProgramViewCell"
     case studentViewCell = "StudentViewCell"
     case notificationViewCell = "NotificationViewCell"
-    
+    case manageViewCell = "ManageViewCell"
+
     //MARK: -- HeaderFooter
     case dateHeader = "DateHeader"
     case notiHeaderCell = "NotiHeaderCell"
@@ -111,6 +112,15 @@ extension NotificationViewCell {
             return cell
         }
         fatalError("DEVELOP ERROR: The registered cell type for identifier \"\(CustomXib.notificationViewCell.rawValue)\"!")
+    }
+}
+
+extension ManageViewCell {
+    static func dequeueReuse(tableView: UITableView) -> ManageViewCell {
+        if let cell = tableView.dequeReuseCell(xib: .manageViewCell) as? ManageViewCell {
+            return cell
+        }
+        fatalError("DEVELOP ERROR: The registered cell type for identifier \"\(CustomXib.manageViewCell.rawValue)\"!")
     }
 }
 

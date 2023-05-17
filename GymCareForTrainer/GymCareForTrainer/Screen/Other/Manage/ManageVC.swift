@@ -19,6 +19,7 @@ class ManageVC: BaseViewController {
     private let userInfo = ServiceSettings.shared.userInfo
     private let listNotiHeader: [String] = ["Đơn mới", "Đơn đã duyệt", "Đơn đã huỷ"]
     private var selectedItem: Int = 0
+    private var typeStatus: TypeStatus = .create
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,12 @@ class ManageVC: BaseViewController {
     }
     
     private func configUI() {
-        tableView.registerCells(from: .notificationViewCell)
+        tableView.registerCells(from: .manageViewCell)
         collectionView.registerCells(from: .notiHeaderCell)
-
+        cutomNavi.onClickBack = { [weak self] in
+            guard let `self` = self else { return }
+            self.backScreen()
+        }
         refreshControl.addTarget(self, action: #selector(getListNotify), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
@@ -50,11 +54,23 @@ class ManageVC: BaseViewController {
             self.refreshControl.endRefreshing()
         }
     }
-
-    private func showDetail(noti: NotifiObject) {
-        let notifyDetailVC = NotifiDetailVC()
-        notifyDetailVC.notify = noti
-        self.nextScreen(ctrl: notifyDetailVC)
+    
+    private func getClasses(classId: Int?, timeId: Int?) {
+        viewModel.getClasses(trainerId: castToInt(ServiceSettings.shared.userInfo?.id)) { data, msg in
+            if let msg = msg {
+                AlertVC.show(viewController: self, msg: msg)
+            } else {
+                if let data = data {
+                    let classModel = data.first(where: {$0.datumClass?.id == classId})
+                    let time = classModel?.time?.first(where: {$0.id == timeId})
+                    let vc = ProgramVC()
+                    vc.listSearchData = time?.customer ?? []
+                    vc.titleValue = "Danh sách học viên"
+                    vc.type = .customerClass
+                    self.nextScreen(ctrl: vc)
+                }
+            }
+        }
     }
     
     private func reloadData() {
@@ -68,11 +84,14 @@ class ManageVC: BaseViewController {
     private func filterNoti() {
         switch selectedItem {
         case 0:
-            listNotifi = listOriginNotifi.filter({$0.status == TypeStatus.viewOnly.rawValue || $0.status == TypeStatus.create.rawValue || $0.status == TypeStatus.update.rawValue})
+            listNotifi = listOriginNotifi.filter({ $0.status == TypeStatus.create.rawValue || $0.status == TypeStatus.update.rawValue})
+            typeStatus = .create
         case 1:
             listNotifi = listOriginNotifi.filter({$0.status == TypeStatus.acceptUpdate.rawValue || $0.status == TypeStatus.acceptCreate.rawValue})
+            typeStatus = .acceptCreate
         case 2:
             listNotifi = listOriginNotifi.filter({$0.status == TypeStatus.ignore.rawValue})
+            typeStatus = .ignore
         default: break
         }
     }
@@ -89,17 +108,20 @@ extension ManageVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = NotificationViewCell.dequeueReuse(tableView: tableView)
+        let cell = ManageViewCell.dequeueReuse(tableView: tableView)
         guard indexPath.row < listNotifi.count else { return cell }
         let notify = listNotifi[indexPath.row]
-        cell.fillData(notify: notify)
-        cell.showDetail = { [unowned self] in
-            self.showDetail(noti: notify)
-            self.listNotifi[indexPath.row].is_read = 1
-            self.viewModel.callApiUpdateStatus(notiId: castToInt(self.listNotifi[indexPath.row].id)) {}
-            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        cell.fillData(notify: notify, typeStatus: typeStatus)
+        cell.showClass = { [unowned self] in
+            self.getClasses(classId: (notify.classModel?.id), timeId: notify.time_id)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let notifyDetailVC = NotifiDetailVC()
+        notifyDetailVC.notify = listNotifi[indexPath.row]
+        self.nextScreen(ctrl: notifyDetailVC)
     }
 
 }

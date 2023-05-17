@@ -43,7 +43,7 @@ class OtherVC: BaseViewController {
         case .profile:
             nextScreen(ctrl: EditInforAcCountVC())
         case .fee:
-            self.nextScreen(ctrl: SettingVC())
+            self.nextScreen(ctrl: ManageVC())
         case .setting:
             self.nextScreen(ctrl: SettingVC())
         case .logout:
@@ -64,7 +64,7 @@ class OtherVC: BaseViewController {
     }
 
     func presentSwiftUIView() {
-        let swiftUIView = ContentView()
+        let swiftUIView = ContentView().preferredColorScheme(.light)
         let hostingController = UIHostingController(rootView: swiftUIView)
         hostingController.modalPresentationStyle = .fullScreen
         present(hostingController, animated: false, completion: nil)

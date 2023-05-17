@@ -15,6 +15,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageVC" customModule="GymCareForTrainer" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="gJI-Ia-lgv" id="tP1-47-6Ae"/>
+                <outlet property="cutomNavi" destination="Gtq-d4-pMN" id="UxU-yw-3kL"/>
+                <outlet property="tableView" destination="IRK-LJ-YTI" id="DgE-I4-jUY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,14 +32,15 @@
                         <constraint firstAttribute="height" constant="110" id="8VM-e9-evK"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Thông báo"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Lịch sử"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHideBackButton" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isBackButton" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZKH-pb-CED">
                     <rect key="frame" x="0.0" y="110" width="393" height="742"/>
                     <subviews>
-                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-Ia-lgv">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-Ia-lgv">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -48,19 +52,27 @@
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="0Pu-gp-ZGc"/>
+                                <outlet property="delegate" destination="-1" id="cen-vS-LFY"/>
+                            </connections>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVA-aa-yc5">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="742"/>
+                            <rect key="frame" x="0.0" y="50" width="393" height="692"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có thông báo nào" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyd-hm-EWb">
-                                    <rect key="frame" x="111" y="361.66666666666669" width="171" height="18.666666666666686"/>
+                                    <rect key="frame" x="111" y="336.66666666666669" width="171" height="18.666666666666686"/>
                                     <fontDescription key="fontDescription" name="SFCompactDisplay-Regular" family="SF Compact Display" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IRK-LJ-YTI">
-                                    <rect key="frame" x="0.0" y="10" width="393" height="722"/>
+                                    <rect key="frame" x="0.0" y="10" width="393" height="672"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="bkY-uU-bZa"/>
+                                        <outlet property="delegate" destination="-1" id="MsB-Or-RC1"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
