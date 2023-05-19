@@ -3,15 +3,24 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Semibold.ttf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgramVC" customModule="GymCareForTrainer" customModuleProvider="target">
             <connections>
+                <outlet property="classLabel" destination="Lwl-14-7lb" id="t5T-IZ-p0i"/>
+                <outlet property="classView" destination="cBG-3x-LS3" id="hy8-Am-APY"/>
                 <outlet property="cutomNavi" destination="apX-NS-lms" id="DZT-Cb-crF"/>
                 <outlet property="tableView" destination="lXv-h7-YOZ" id="Gbi-5M-lfr"/>
+                <outlet property="timeLabel" destination="6gJ-If-wPc" id="802-Zg-en4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,8 +46,46 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isBackButton" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="55d-bg-ehI">
+                    <rect key="frame" x="0.0" y="110" width="375" height="1"/>
+                    <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBG-3x-LS3">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lớp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwl-14-7lb">
+                                    <rect key="frame" x="20" y="20" width="27.333333333333329" height="0.0"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                    <color key="textColor" name="color_3E4041"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời gian" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gJ-If-wPc">
+                                    <rect key="frame" x="20" y="35" width="335" height="0.0"/>
+                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                    <color key="textColor" name="color_3E4041"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="6gJ-If-wPc" firstAttribute="top" secondItem="Lwl-14-7lb" secondAttribute="bottom" constant="15" id="DCb-iS-aLe"/>
+                                <constraint firstAttribute="trailing" secondItem="6gJ-If-wPc" secondAttribute="trailing" constant="20" id="GK1-Q8-N4E"/>
+                                <constraint firstItem="Lwl-14-7lb" firstAttribute="leading" secondItem="cBG-3x-LS3" secondAttribute="leading" constant="20" id="L1O-Mb-pJh"/>
+                                <constraint firstItem="6gJ-If-wPc" firstAttribute="leading" secondItem="cBG-3x-LS3" secondAttribute="leading" constant="20" id="c4G-xz-c6A"/>
+                                <constraint firstAttribute="bottom" secondItem="6gJ-If-wPc" secondAttribute="bottom" constant="20" id="h3G-4Y-7gH"/>
+                                <constraint firstItem="Lwl-14-7lb" firstAttribute="top" secondItem="cBG-3x-LS3" secondAttribute="top" constant="20" id="nxj-mM-B22"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PwJ-ap-QvN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" name="light_gray_color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="QyX-AA-jG2"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lXv-h7-YOZ">
-                    <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                    <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="59r-y2-nvW"/>
@@ -49,19 +96,30 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="55d-bg-ehI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0BA-bS-2Vz"/>
                 <constraint firstItem="lXv-h7-YOZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Ge-fm-7g0"/>
                 <constraint firstItem="apX-NS-lms" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7y0-Hs-RDg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lXv-h7-YOZ" secondAttribute="bottom" id="HIE-PN-osf"/>
-                <constraint firstItem="lXv-h7-YOZ" firstAttribute="top" secondItem="apX-NS-lms" secondAttribute="bottom" id="QCu-nR-qe3"/>
+                <constraint firstItem="55d-bg-ehI" firstAttribute="top" secondItem="apX-NS-lms" secondAttribute="bottom" id="DIO-9l-6IT"/>
+                <constraint firstItem="55d-bg-ehI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GWO-K8-tPT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="55d-bg-ehI" secondAttribute="trailing" id="VF9-Jr-ZF4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lXv-h7-YOZ" secondAttribute="bottom" id="aNs-S7-YR5"/>
                 <constraint firstAttribute="trailing" secondItem="apX-NS-lms" secondAttribute="trailing" id="e8Z-jj-Wgq"/>
+                <constraint firstItem="55d-bg-ehI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gkG-Qr-scX"/>
+                <constraint firstItem="lXv-h7-YOZ" firstAttribute="top" secondItem="55d-bg-ehI" secondAttribute="bottom" id="pr2-01-zN2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lXv-h7-YOZ" secondAttribute="trailing" id="qgr-SQ-EJL"/>
                 <constraint firstItem="apX-NS-lms" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tsK-jj-qQ6"/>
             </constraints>
-            <point key="canvasLocation" x="40" y="-11"/>
+            <point key="canvasLocation" x="38.931297709923662" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
         <image name="header_fee" width="2000" height="530"/>
+        <namedColor name="color_3E4041">
+            <color red="0.24300000071525574" green="0.25099998712539673" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_gray_color">
+            <color red="0.88599997758865356" green="0.88599997758865356" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

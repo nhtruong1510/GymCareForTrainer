@@ -17,11 +17,16 @@ class ProgramVC: BaseViewController {
     }
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var classView: UIView!
+    @IBOutlet private weak var classLabel: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
 
     var titleValue: String?
     var listIds: [(id: Int, isCancelled: Int)] = []
     var listSearchData: [UserModel] = []
     var listTimes: [TimeClass] = []
+    var className: String?
+    var time: String?
     var type = TypeData.customer
     private var viewModel = ProgramViewModel()
     private var listScheduleClass: [ScheduleClass] = []
@@ -45,6 +50,11 @@ class ProgramVC: BaseViewController {
         case .classes:
             getClasses()
         default: break
+        }
+        if let className = className, let time = time {
+            classView.isHidden = false
+            classLabel.text = className
+            timeLabel.text = time
         }
     }
     
@@ -137,6 +147,8 @@ extension ProgramVC: UITableViewDataSource, UITableViewDelegate {
             let vc = ProgramVC()
             vc.listSearchData = listTimes[indexPath.row].customer ?? []
             vc.titleValue = "Danh sách học viên"
+            vc.className = "Lớp: " + castToString(cutomNavi.title)
+            vc.time = "Thời gian: " + castToString(listTimes[indexPath.row].date) + "/ " + castToString(listTimes[indexPath.row].time)
             vc.type = .customerClass
             nextScreen(ctrl: vc)
         }

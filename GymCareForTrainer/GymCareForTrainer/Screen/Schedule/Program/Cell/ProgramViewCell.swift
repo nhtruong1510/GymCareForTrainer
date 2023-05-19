@@ -14,6 +14,7 @@ class ProgramViewCell: UITableViewCell {
     @IBOutlet private weak var cancelLabel: UILabel!
     @IBOutlet private weak var cancelView: UIView!
     @IBOutlet private weak var widthConstrant: NSLayoutConstraint!
+    @IBOutlet private weak var numberLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,6 +46,8 @@ class ProgramViewCell: UITableViewCell {
         cancelLabel.text = castToString(data.time)
         cancelView.backgroundColor = .color_46C0FF
         widthConstrant.constant = 0
+        numberLabel.text = "Số học viên: " + castToString(castToInt(data.customer?.count))
+        numberLabel.isHidden = false
     }
     
     func fillDataClass(data: UserModel) {

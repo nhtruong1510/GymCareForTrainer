@@ -13,12 +13,12 @@ struct TabbarView: View {
     var body: some View {
         NavigationView {
             TabView {
-                HomeVCRepresentation()    // 1
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                    }
-                    .ignoresSafeArea()
+//                HomeVCRepresentation()    // 1
+//                    .tabItem {
+//                        Image(systemName: "house.fill")
+//                        Text("Home")
+//                    }
+//                    .ignoresSafeArea()
                 ScheduleVCRepresentation()
                     .tabItem {
                         Image(systemName: "calendar")

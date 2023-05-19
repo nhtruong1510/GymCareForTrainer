@@ -164,13 +164,23 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqp-s4-BJO">
+                                <rect key="frame" x="19.999999999999986" y="10.666666666666673" width="244.66666666666663" height="28.666666666666671"/>
+                                <string key="text">... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... </string>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oCu-M2-G3T" firstAttribute="top" secondItem="UtX-ex-QzZ" secondAttribute="top" constant="7.6699999999999999" id="18N-CH-d9O"/>
+                            <constraint firstItem="kqp-s4-BJO" firstAttribute="leading" secondItem="UtX-ex-QzZ" secondAttribute="leading" constant="20" id="1r5-cD-MsW"/>
                             <constraint firstItem="oCu-M2-G3T" firstAttribute="centerY" secondItem="UtX-ex-QzZ" secondAttribute="centerY" id="4Ki-rp-wFO"/>
+                            <constraint firstItem="oCu-M2-G3T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kqp-s4-BJO" secondAttribute="trailing" constant="10" id="Llg-ni-AVR"/>
                             <constraint firstAttribute="trailing" secondItem="oCu-M2-G3T" secondAttribute="trailing" constant="20" id="Uw9-y4-J0t"/>
                             <constraint firstItem="oCu-M2-G3T" firstAttribute="top" secondItem="UtX-ex-QzZ" secondAttribute="top" constant="7.6699999999999999" id="fkS-T5-nwy"/>
+                            <constraint firstItem="kqp-s4-BJO" firstAttribute="centerY" secondItem="UtX-ex-QzZ" secondAttribute="centerY" id="hM8-zB-GsL"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbE-3L-5A5">
@@ -206,15 +216,17 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addressLabel" destination="kqp-s4-BJO" id="5ni-y3-Akw"/>
                 <outlet property="avatarView" destination="HsQ-bo-Jve" id="PrJ-VV-G4V"/>
                 <outlet property="classLabel" destination="XSg-CU-YR2" id="EOV-vt-BWD"/>
                 <outlet property="dateLabel" destination="1h1-db-IXQ" id="9kJ-PC-Ig0"/>
                 <outlet property="nameLabel" destination="Vbe-35-2uO" id="8FO-Av-5j3"/>
-                <outlet property="showClassView" destination="UtX-ex-QzZ" id="3Gd-SD-sx9"/>
+                <outlet property="showClassView" destination="oCu-M2-G3T" id="fXD-qW-NRb"/>
                 <outlet property="statusLabel" destination="qWO-X8-kiW" id="LPm-8w-hlg"/>
                 <outlet property="timeLabel" destination="dTW-Do-ovL" id="AYw-nh-kGZ"/>
                 <outlet property="warningLabel" destination="UqH-bh-eIh" id="Cjj-AI-B8A"/>
                 <outlet property="warningView" destination="182-Bp-P4t" id="aVl-UT-BjI"/>
+                <outlet property="widthClassViewConstraint" destination="BnX-FV-q06" id="9fs-ud-bZC"/>
             </connections>
             <point key="canvasLocation" x="187.78625954198472" y="31.338028169014088"/>
         </tableViewCell>

@@ -66,6 +66,8 @@ class ManageVC: BaseViewController {
                     let vc = ProgramVC()
                     vc.listSearchData = time?.customer ?? []
                     vc.titleValue = "Danh sách học viên"
+                    vc.className = "Lớp: " + castToString(classModel?.datumClass?.name)
+                    vc.time = "Thời gian: " + castToString(time?.date) + "/ " + castToString(time?.time)
                     vc.type = .customerClass
                     self.nextScreen(ctrl: vc)
                 }
@@ -113,15 +115,15 @@ extension ManageVC: UITableViewDelegate, UITableViewDataSource {
         let notify = listNotifi[indexPath.row]
         cell.fillData(notify: notify, typeStatus: typeStatus)
         cell.showClass = { [unowned self] in
-            self.getClasses(classId: (notify.classModel?.id), timeId: notify.time_id)
+            self.getClasses(classId: notify.classModel?.id, timeId: notify.time_id)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notifyDetailVC = NotifiDetailVC()
-        notifyDetailVC.notify = listNotifi[indexPath.row]
-        self.nextScreen(ctrl: notifyDetailVC)
+//        let notifyDetailVC = NotifiDetailVC()
+//        notifyDetailVC.notify = listNotifi[indexPath.row]
+//        self.nextScreen(ctrl: notifyDetailVC)
     }
 
 }
