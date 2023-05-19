@@ -55,7 +55,7 @@ class ManageVC: BaseViewController {
         }
     }
     
-    private func getClasses(classId: Int?, timeId: Int?) {
+    private func getClasses(classId: Int?, timeId: Int?, customerId: Int?) {
         viewModel.getClasses(trainerId: castToInt(ServiceSettings.shared.userInfo?.id)) { data, msg in
             if let msg = msg {
                 AlertVC.show(viewController: self, msg: msg)
@@ -63,6 +63,10 @@ class ManageVC: BaseViewController {
                 if let data = data {
                     let classModel = data.first(where: {$0.datumClass?.id == classId})
                     let time = classModel?.time?.first(where: {$0.id == timeId})
+                    guard castToBool(time?.customer?.contains(where: {$0.id == customerId})) else {
+                        AlertVC.show(viewController: self, msg: "Học viên đã chuyển sang lớp khác")
+                        return
+                    }
                     let vc = ProgramVC()
                     vc.listSearchData = time?.customer ?? []
                     vc.titleValue = "Danh sách học viên"
@@ -115,7 +119,7 @@ extension ManageVC: UITableViewDelegate, UITableViewDataSource {
         let notify = listNotifi[indexPath.row]
         cell.fillData(notify: notify, typeStatus: typeStatus)
         cell.showClass = { [unowned self] in
-            self.getClasses(classId: notify.classModel?.id, timeId: notify.time_id)
+            self.getClasses(classId: notify.classModel?.id, timeId: notify.time_id, customerId: notify.customer?.id)
         }
         return cell
     }

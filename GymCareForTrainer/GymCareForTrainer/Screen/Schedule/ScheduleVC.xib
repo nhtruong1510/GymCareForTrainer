@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleVC" customModule="GymCareForTrainer" customModuleProvider="target">
             <connections>
                 <outlet property="calendarView" destination="nOX-oD-GMR" id="LXm-Z8-twi"/>
+                <outlet property="heightTableConstraint" destination="Au8-s8-Lzx" id="KY1-eU-3PG"/>
                 <outlet property="scrollView" destination="dzZ-FT-h7q" id="XHp-ii-KUN"/>
                 <outlet property="tableView" destination="ZY8-jb-26V" id="ZtJ-WB-Tvm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -52,7 +53,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whx-HN-Zfg">
                             <rect key="frame" x="0.0" y="430" width="393" height="150"/>
                             <subviews>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZY8-jb-26V" customClass="ContentSizedTableView" customModule="GymCareForTrainer" customModuleProvider="target">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZY8-jb-26V" customClass="ContentSizedTableView" customModule="GymCareForTrainer" customModuleProvider="target">
                                     <rect key="frame" x="30" y="0.0" width="333" height="150"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <connections>
