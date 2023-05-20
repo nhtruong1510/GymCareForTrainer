@@ -153,6 +153,8 @@
 		079D35AF29AD1984006B162F /* ExtracurricularDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D35AC29AD1984006B162F /* ExtracurricularDetailViewModel.swift */; };
 		079D35B029AD1984006B162F /* ContentProgramVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D35AD29AD1984006B162F /* ContentProgramVC.swift */; };
 		07A2E03629CF2A8500E74483 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A2E03529CF2A8500E74483 /* BaseViewController.swift */; };
+		07A73B372A177FD800990D8D /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A73B362A177FD800990D8D /* Firebase.swift */; };
+		07A73B392A17802300990D8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07A73B382A17802300990D8D /* GoogleService-Info.plist */; };
 		07F201502A0C8DD800478BF6 /* ManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2014E2A0C8DD800478BF6 /* ManageVC.swift */; };
 		07F201512A0C8DD800478BF6 /* ManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F2014F2A0C8DD800478BF6 /* ManageVC.xib */; };
 		07F201552A0C8EE800478BF6 /* ManageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F201532A0C8EE800478BF6 /* ManageViewCell.swift */; };
@@ -298,7 +300,6 @@
 		079D34F629AD14FD006B162F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		079D34F929AD14FD006B162F /* ImageCompresor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCompresor.m; sourceTree = "<group>"; };
 		079D34FA29AD14FD006B162F /* ImageCompresor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCompresor.h; sourceTree = "<group>"; };
-		079D34FB29AD14FD006B162F /* SchoolUpTeacher-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SchoolUpTeacher-Bridging-Header.h"; sourceTree = "<group>"; };
 		079D34FF29AD14FD006B162F /* TopResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopResponse.swift; sourceTree = "<group>"; };
 		079D350029AD14FD006B162F /* BannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		079D350229AD14FD006B162F /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
@@ -319,6 +320,8 @@
 		079D35AC29AD1984006B162F /* ExtracurricularDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtracurricularDetailViewModel.swift; sourceTree = "<group>"; };
 		079D35AD29AD1984006B162F /* ContentProgramVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProgramVC.swift; sourceTree = "<group>"; };
 		07A2E03529CF2A8500E74483 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		07A73B362A177FD800990D8D /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		07A73B382A17802300990D8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07F2014E2A0C8DD800478BF6 /* ManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageVC.swift; sourceTree = "<group>"; };
 		07F2014F2A0C8DD800478BF6 /* ManageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageVC.xib; sourceTree = "<group>"; };
 		07F201532A0C8EE800478BF6 /* ManageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewCell.swift; sourceTree = "<group>"; };
@@ -422,6 +425,7 @@
 		079D342D29AD1391006B162F /* GymCareForTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				07A73B382A17802300990D8D /* GoogleService-Info.plist */,
 				079D348029AD14FD006B162F /* Common */,
 				079D347C29AD14FC006B162F /* Constant */,
 				079D346029AD14FC006B162F /* CustomView */,
@@ -491,6 +495,7 @@
 		079D345329AD14FC006B162F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				07A73B362A177FD800990D8D /* Firebase.swift */,
 				0785D4562A10025B002DACD3 /* UIWindow+Extension.swift */,
 				079D345429AD14FC006B162F /* UIImageView+Extension.swift */,
 				079D345529AD14FC006B162F /* UIFont+Extension.swift */,
@@ -850,7 +855,6 @@
 			children = (
 				079D34F929AD14FD006B162F /* ImageCompresor.m */,
 				079D34FA29AD14FD006B162F /* ImageCompresor.h */,
-				079D34FB29AD14FD006B162F /* SchoolUpTeacher-Bridging-Header.h */,
 			);
 			path = CompressImage;
 			sourceTree = "<group>";
@@ -1064,6 +1068,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				079D357629AD14FE006B162F /* OtherVC.xib in Resources */,
+				07A73B392A17802300990D8D /* GoogleService-Info.plist in Resources */,
 				076F67D529C2375A000DA808 /* NotificationViewCell.xib in Resources */,
 				079D352C29AD14FE006B162F /* TypeNavigator.xib in Resources */,
 				07F201562A0C8EE800478BF6 /* ManageViewCell.xib in Resources */,
@@ -1245,6 +1250,7 @@
 				079D353029AD14FE006B162F /* AvatarView.swift in Sources */,
 				079D354F29AD14FE006B162F /* BannerViewCell.swift in Sources */,
 				079D352629AD14FE006B162F /* UITableView+Extension.swift in Sources */,
+				07A73B372A177FD800990D8D /* Firebase.swift in Sources */,
 				07F3AA2729AE61A100F0A541 /* ProgramVC.swift in Sources */,
 				071C767529C78AB1003587AE /* ScheduleParamObject.swift in Sources */,
 				079D353B29AD14FE006B162F /* Config.swift in Sources */,

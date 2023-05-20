@@ -1,6 +1,6 @@
 //
 //  SubButton.swift
-//  SchoolUpTeacher
+//  GymCare
 //
 //  Created by Truong Nguyen Huu on 16/01/2023.
 //
