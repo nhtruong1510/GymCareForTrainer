@@ -36,7 +36,7 @@ class MessageViewCell: UITableViewCell {
         titleInfoLabel.text = isStartMsg ? beginMsg : data.lastMessage
         titleInfoLabel.font = data.isRead() ? .Light(size: 12) : .Bold(size: 12)
         isReadView.backgroundColor = data.isRead() ? UIColor.lightGray : UIColor.main_color
-        isReadView.isHidden = isStartMsg
+        isReadView.isHidden = data.isRead()
     }
     
     @IBAction private func onClickMessage() {
